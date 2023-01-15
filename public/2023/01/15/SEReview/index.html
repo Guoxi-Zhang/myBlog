@@ -1,0 +1,1089 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>软件工程知识点复习总结 | Guoxi's Blog</title><meta name="author" content="Guoxi Zhang"><meta name="copyright" content="Guoxi Zhang"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Software： （1）指令的集合，通过执行这些指令可以满足预期的特征、功能和性能需求； （2）数据结构，使得程序可以合理利用信息 （3）软件描述信息，它以硬拷贝和虚拟形式存在，用来描述程序操作和使用    出错名称 系统输出信息 处理方法    用户名输入错误 用户名或密码错误 返回登录界面   密码输入错误 用户名或密码错误 返回登录界面   输入格式错误 输入格式错误，请重新输入 返回输入">
+<meta property="og:type" content="article">
+<meta property="og:title" content="软件工程知识点复习总结">
+<meta property="og:url" content="https://guoxi-zhang.github.io/2023/01/15/SEReview/index.html">
+<meta property="og:site_name" content="Guoxi&#39;s Blog">
+<meta property="og:description" content="Software： （1）指令的集合，通过执行这些指令可以满足预期的特征、功能和性能需求； （2）数据结构，使得程序可以合理利用信息 （3）软件描述信息，它以硬拷贝和虚拟形式存在，用来描述程序操作和使用    出错名称 系统输出信息 处理方法    用户名输入错误 用户名或密码错误 返回登录界面   密码输入错误 用户名或密码错误 返回登录界面   输入格式错误 输入格式错误，请重新输入 返回输入">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/Guoxi-Zhang/guoxi-zhang.github.io/hexo/public/img/avatar.png">
+<meta property="article:published_time" content="2023-01-15T09:25:53.413Z">
+<meta property="article:modified_time" content="2023-01-15T13:22:23.972Z">
+<meta property="article:author" content="Guoxi Zhang">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/Guoxi-Zhang/guoxi-zhang.github.io/hexo/public/img/avatar.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://guoxi-zhang.github.io/2023/01/15/SEReview/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '软件工程知识点复习总结',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-01-15 21:22:23'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = url => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      link.onload = () => resolve()
+      link.onerror = () => reject()
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://raw.githubusercontent.com/Guoxi-Zhang/guoxi-zhang.github.io/hexo/public/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Guoxi's Blog"><span class="site-name">Guoxi's Blog</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">软件工程知识点复习总结</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-01-15T09:25:53.413Z" title="发表于 2023-01-15 17:25:53">2023-01-15</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-01-15T13:22:23.972Z" title="更新于 2023-01-15 21:22:23">2023-01-15</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/">软件工程</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">13.3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>39分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="软件工程知识点复习总结"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><p><strong>Software：</strong></p>
+<p>（1）指令的集合，通过执行这些指令可以满足预期的特征、功能和性能需求；</p>
+<p>（2）数据结构，使得程序可以合理利用信息</p>
+<p>（3）软件描述信息，它以硬拷贝和虚拟形式存在，用来描述程序操作和使用</p>
+<table>
+<thead>
+<tr>
+<th><strong>出错名称</strong></th>
+<th><strong>系统输出信息</strong></th>
+<th><strong>处理方法</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>用户名输入错误</td>
+<td>用户名或密码错误</td>
+<td>返回登录界面</td>
+</tr>
+<tr>
+<td>密码输入错误</td>
+<td>用户名或密码错误</td>
+<td>返回登录界面</td>
+</tr>
+<tr>
+<td>输入格式错误</td>
+<td>输入格式错误，请重新输入</td>
+<td>返回输入界面</td>
+</tr>
+<tr>
+<td>数据库连接失败</td>
+<td>数据库连接失败，请检查连接</td>
+<td>返回操作前的页面</td>
+</tr>
+<tr>
+<td>TCP连接错误</td>
+<td>连接超时，请检查连接</td>
+<td>返回操作前的页面</td>
+</tr>
+<tr>
+<td>不允许为空的输入框输入空字符</td>
+<td>输入为空，请输入</td>
+<td>弹回原输入页面输入处</td>
+</tr>
+<tr>
+<td>系统故障</td>
+<td>服务器出现故障，请联系管理员</td>
+<td>立刻启用备用机</td>
+</tr>
+</tbody></table>
+<h1 id="Software-Engineering："><a href="#Software-Engineering：" class="headerlink" title="Software Engineering："></a><strong>Software Engineering：</strong></h1><p>软件工程是：</p>
+<p>（1）将系统化的、规范化、可量化的方法应用于软件的开发、运行和维护，即将工程化方法应用于软件。</p>
+<p>（2）在（1）中所述方法的研究</p>
+<h2 id="What-the-difference-between-software-and-hardware"><a href="#What-the-difference-between-software-and-hardware" class="headerlink" title="What the difference between software and hardware?"></a><strong>What the difference between software and hardware?</strong></h2><p>1.软件是设计开发的，而不是传统意义上生产制造的。</p>
+<p>2.软件不会“磨损”</p>
+<p>3.大多数软件根据实际的顾客需求定制的。</p>
+<h2 id="Why-does-software-need-Change-or-Evolved"><a href="#Why-does-software-need-Change-or-Evolved" class="headerlink" title="Why does software need Change or Evolved?"></a><strong>Why does software need Change or Evolved?</strong></h2><p> <strong>遗留软件（legacy software）：</strong></p>
+<blockquote>
+<p>遗留软件系统……在几十年前开发，它们不断被修改以满足商业需要和计算平台的变化。这类系统的繁衍使得大型机构十分头痛，因为它们的维护代价高昂且系统演化风险较高。</p>
+</blockquote>
+<p><strong>发生原因：</strong></p>
+<ul>
+<li>软件需要进行<strong>适应性调整（adapt）</strong>，从而可以满足新的计算环境或者技术的需求。</li>
+<li>软件必须<strong>升级（update）</strong>以实现新的商业需求。</li>
+<li>软件必须<strong>扩展（extend）</strong>使之具有与更多新的系统和数据库的互操作能力。</li>
+<li>软件架构必须进行<strong>改建（re-architect）</strong>使之能适应多样化的网络环境。</li>
+</ul>
+<h2 id="层次化技术"><a href="#层次化技术" class="headerlink" title="层次化技术"></a>层次化技术</h2><p><img src="image-20221012135918954.png" alt="image-20221012135918954"></p>
+<p>支持软件工程的根基在于<strong>质量关注点（quality focus）</strong>：是对软件的组织承诺，是支持软件工程的基石</p>
+<p>软件工程的基础是<strong>过程（process）层</strong>。软件过程将各个技术层次结合在一起，使得合理、及时地开发计算机软件成为可能。</p>
+<p>软件工程<strong>方法（method）</strong>为构建软件提供技术上的解决方法。方法包括：沟通、需求分析、设计模型、编程、测试和技术支持。</p>
+<h1 id="Software-Process-："><a href="#Software-Process-：" class="headerlink" title="Software Process ："></a><strong>Software Process ：</strong></h1><p><strong>软件过程：</strong>软件过程是工作产品构建时所执行的一系列活动、动作和任务的集合。层次关系：</p>
+<ul>
+<li>软件过程<ul>
+<li>过程框架<ul>
+<li>普适性活动<ul>
+<li>框架活动<ul>
+<li>软件工程动作<ul>
+<li>任务集<ul>
+<li>质量保证点、项目里程碑等</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Generic-Framework-Activity-通用框架活动"><a href="#Generic-Framework-Activity-通用框架活动" class="headerlink" title="Generic Framework Activity(通用框架活动)"></a><strong>Generic Framework Activity(通用框架活动)</strong></h2><p>适用于所有软件项目，无论其规模和复杂程度如何：</p>
+<p><strong>1. 沟通（Communication）：</strong>目的是理解利益相关者的项目目标，并收集需求以定义软件特性和功能。</p>
+<p><strong>2. 策划（Planning）：</strong>定义和描述了软件工程工作，包括需要执行的技术任务、可能的风险、资源需求、工作产品和工作进度计划。</p>
+<p><strong>3. 建模（Modeling）：</strong>利用模型哎更好地理解软件需求并完成符合这些需求的软件设计。</p>
+<p><strong>4. 构建（Construction）：</strong>它包括编码和测试以发现编码中的错误。</p>
+<p><strong>5. 部署（Deployment）：</strong>软件交付到用户，用户对其进行评测并给出反馈意见。</p>
+<p>在项目的多次迭代过程中，沟通、策划、建模、构建、部署等活动不断重复。每次&#x3D;&#x3D;项目迭代&#x3D;&#x3D;都会产生一个软**件增量( software increment)**，每个软件增量实现了部分的软件特性和功能。随着每一次增量的产生，软件逐渐完善。</p>
+<h2 id="Umbrella-Activities（普适性活动）："><a href="#Umbrella-Activities（普适性活动）：" class="headerlink" title="Umbrella Activities（普适性活动）："></a><strong>Umbrella Activities（普适性活动）：</strong></h2><p><strong>普适性活动贯穿软件项目始终。</strong></p>
+<p><strong>1.软件项目跟踪和控制：</strong>项目根据计划评估项目进度，并且采取必要的措施保证项目按进度计划进行。</p>
+<p><strong>2.风险管理：</strong>对可能影响项目成果或者产品质量的风险进行评估。</p>
+<p><strong>3.软件质量保证：</strong>确定和执行软件质量保证的活动</p>
+<p><strong>4.技术评估：</strong>评估软件工程产品、尽量在错误传播到下一个活动之前，发现并清除错误。</p>
+<p><strong>5.测量：</strong>定义和收集过程、项目和产品的度量，以帮助团队在发布软件的时候满足利益相关者要求。同时，测量还可以与其他框架活动和普适性活动配合使用。</p>
+<p><strong>6.软件配置管理：</strong>在整个软件工程中，管理变更所带来的影响。</p>
+<p><strong>7.可复用管理：</strong>定义产品复用的标准，并且建立构建复用机制。</p>
+<p><strong>8.工作产品的准备和生产：</strong>包括了生产产品所必需的活动。</p>
+<h2 id="Process-Flow"><a href="#Process-Flow" class="headerlink" title="Process Flow"></a><strong>Process Flow</strong></h2><p><strong>过程流：</strong>描述了在执行顺序和执时间上，如何组织框架中的活动，动作，任务。</p>
+<ul>
+<li><p><strong>线性过程流（Liner process flow）：</strong>从沟通到部署顺序执行五个框架活动。</p>
+</li>
+<li><p><strong>迭代过程流（iterative process flow）：</strong>在执行下一个活动前重复执行之前一个或多个活动。</p>
+<p><img src="image-20221012140248086.png" alt="image-20221012140248086"></p>
+</li>
+<li><p><strong>演化过程流（evolution process flow）：</strong>采取循环的方式执行各个活动。<img src="image-20221012140310071.png" alt="image-20221012140310071"></p>
+</li>
+<li><p><strong>并行过程流（parallel process flow）：</strong>将一个或是多个活动与其他活动并行执行。<img src="image-20221012140314730.png" alt="image-20221012140314730"></p>
+</li>
+</ul>
+<h2 id="过程模式（process-pattern）"><a href="#过程模式（process-pattern）" class="headerlink" title="过程模式（process pattern）"></a><strong>过程模式（process pattern）</strong></h2><p>描述了软件工程工作中遇到的过程相关的问题、明确了问题环境并给出了针对该问题的一种或几种可证明的解决方式。</p>
+<h2 id="Process-Model"><a href="#Process-Model" class="headerlink" title="Process Model"></a><strong>Process Model</strong></h2><p>惯用过程模型是为了改变软件开发的混乱状态，促使软件开发更加有序。</p>
+<h3 id="瀑布模型（waterfall-model）"><a href="#瀑布模型（waterfall-model）" class="headerlink" title="瀑布模型（waterfall model）"></a><strong>瀑布模型（waterfall model）</strong></h3><p><strong>又被称为经典生命周期（classic life cycle），它提出了一个系统的、顺序的软件开发方法。</strong></p>
+<p><strong>优点：</strong></p>
+<p>有利于大型软件开发过程中人员的组织、管理，从而提高了大型软件项目开发的质量和效</p>
+<p>率。</p>
+<p>当需求确定、工作采用线性的方式完成的时候瀑布模型是一个很有用的过程模型。</p>
+<p>一个有用的过程模型，其中需求是固定的，工作将以线性方式完成。</p>
+<p><strong>缺点:</strong></p>
+<p>过于理想，缺乏灵活性，容易产生需求偏差。</p>
+<p>实际的项目很少遵守瀑布模型提出的顺序。</p>
+<p>客户通常很难清除的描述所有的需求。</p>
+<p>客户必须要有耐心，因为只有在项目接近尾声的时候，他们才能的带执行的程序。</p>
+<p><strong>适用范围：</strong>需求确定，工作能够采用线性的方式完成的软件。</p>
+<p><img src="image-20221012140409612.png" alt="image-20221012140409612"></p>
+<h3 id="V-模型（V-model）："><a href="#V-模型（V-model）：" class="headerlink" title="V 模型（V-model）："></a><strong>V 模型（V-model）：</strong></h3><p>描述了质量保证动作同沟通、建模相关动作以及早期构建相关的动作之间的关系。</p>
+<p>V 模型强调软件开发的协作和速度，将软件实现和验证有机地结合起来，在保证较高的软</p>
+<p>件质量情况下缩短开发周期。</p>
+<p><strong>优点：</strong>适合工程量小、人力资源少并且开发过程中改动不大的项目</p>
+<p><strong>缺点：</strong>错误发现时间迟，产生的风险代价高</p>
+<p><img src="image-20221012140424181.png" alt="image-20221012140424181"></p>
+<h3 id="增量过程模型（Incremental-Model）"><a href="#增量过程模型（Incremental-Model）" class="headerlink" title="增量过程模型（Incremental Model）"></a><strong>增量过程模型（Incremental Model）</strong></h3><p>增量过程模型侧重于每一个增量都提交一个可以运行的产品。</p>
+<p><strong>优点：</strong></p>
+<ol>
+<li><p>能在较短的时间内向用户提交可完成部分工作的产品。</p>
+</li>
+<li><p>逐步增加产品功能可以使用户有充裕的时间学习和适应新产品，从而减少一个 全新的软件可能给客户组织带来的冲击。</p>
+</li>
+<li><p>规避技术风险</p>
+</li>
+<li><p>可并行开发构件，加快开发的进度</p>
+</li>
+<li><p>对于在业务截止日期之前完全实施的人员配置非常有用。</p>
+</li>
+</ol>
+<p><strong>缺点：</strong></p>
+<p>（1）并行开发构件有可能遇到不能集成的风险，软件必须具备开放式的体系结构；</p>
+<p>（2）增量模型的灵活性可以使其适应这种变化的能力大大优于瀑布模型和快速原型模</p>
+<p>型，但也很容易退化为边做边改模型，从而是软件过程的控制失去整体性。</p>
+<p><strong>适用范围：</strong></p>
+<p>（1）进行已有产品升级或新版本开发，增量模型是非常适合的；</p>
+<p>（2）对完成期限严格要求的产品，可以使用增量模型；</p>
+<p>（3）对所开发的领域比较熟悉而且已有原型系统，增量模型也是非常适合的。（4） 项目在既定的商业要求期限之前不可能找到足够的开发人员</p>
+<p><img src="image-20221012140439333.png" alt="image-20221012140439333"></p>
+<h3 id="演化过程模型（Evolutionary-Model）"><a href="#演化过程模型（Evolutionary-Model）" class="headerlink" title="演化过程模型（Evolutionary Model）"></a><strong>演化过程模型（Evolutionary Model）</strong></h3><p>演化模型是迭代的过程模型。</p>
+<p><strong>原型开发（prototyping ）</strong>：当需求很模糊的时候，原型开发可以帮助软件开发人员和利益相关者更好地理解究竟需要做什么。</p>
+<p><strong>优点：</strong></p>
+<ol>
+<li><p>开发者与用户充分交流，可以澄清模糊需求，需求定义比其他 模型好得多</p>
+</li>
+<li><p>开发过程与用户培训过程同步</p>
+</li>
+<li><p>为用户需求的改变提供了充分的余地</p>
+</li>
+<li><p>开发风险低，产品柔性好</p>
+</li>
+<li><p>开发费用低，时间短</p>
+</li>
+<li><p>系统易维护，对用户更友好</p>
+</li>
+</ol>
+<p><strong>缺点：</strong></p>
+<ol>
+<li><p>没有考虑软件的整体质量和长期的可维护性。</p>
+</li>
+<li><p>大部分情况是不合适的操作算法被采用目的为了演示功能，不合适的开发工 具被采用仅仅为它的方便，还有不合适的操作系统被选择等等。</p>
+</li>
+<li><p>由于达不到质量要求产品可能被抛弃，而采用新的模型重新设计。</p>
+</li>
+</ol>
+<p><strong>适用范围：</strong></p>
+<p>尽管原型可以用作独立的流程模型，但它更常用作一种可以在任何流模型的上下文中实现的技术。</p>
+<p><img src="image-20221012140506865.png" alt="image-20221012140506865"></p>
+<h3 id="螺旋模型（Spiral-Model）"><a href="#螺旋模型（Spiral-Model）" class="headerlink" title="螺旋模型（Spiral Model）"></a><strong>螺旋模型（Spiral Model）</strong></h3><p>螺旋模型是一种风险驱动型的过程模型生成器，对于软件集中的系统，它可以指导多个利益相关者的协同工作。</p>
+<p><strong>优点：</strong></p>
+<p>它结合了原型的迭代性质和瀑布模型的系统性和可控性特点。</p>
+<ol>
+<li><p>强调风险</p>
+</li>
+<li><p>强调阶段质量</p>
+</li>
+<li><p>提供纠错的机会</p>
+</li>
+<li><p>使用原型作为风险降低机制，进一步使开发人员能够在产品演变的任何阶段应用原型方法。</p>
+</li>
+</ol>
+<p><strong>缺点：</strong></p>
+<ol>
+<li><p>每个阶段都要提出被选方案，进行风险分析，研发周期长，效率低</p>
+</li>
+<li><p>必须要转业的风险分析人员的参与</p>
+</li>
+<li><p>如果没有发现和管理重大风险，问题无疑将会发生。</p>
+</li>
+</ol>
+<p><strong>适用范围：</strong>大型项目</p>
+<p><img src="image-20221012140533502.png" alt="image-20221012140533502"></p>
+<h3 id="协同模型（concurrent-development-model）"><a href="#协同模型（concurrent-development-model）" class="headerlink" title="协同模型（concurrent development model）"></a><strong>协同模型（concurrent development model）</strong></h3><p>有时候又称为协同工程，它允许软件团队表述本章所描述的任何模型中的迭代和并发元素。</p>
+<p>协同建模提供了项目当前状态的准确画面。</p>
+<p><strong>适用范围</strong>：所有类型的软件开发，协同模型通常更适合涉及不同工程团队的产品工程项目。</p>
+<p><img src="image-20221012140549113.png" alt="image-20221012140549113"></p>
+<h3 id="统一过程模型（Unified-Process）"><a href="#统一过程模型（Unified-Process）" class="headerlink" title="统一过程模型（Unified Process）"></a><strong>统一过程模型（Unified Process）</strong></h3><p>统一过程模型是一种“用例驱动、以体系结构为核心、迭代及增量”的软件 过程框架，由UML 方法和工具支持。它是一种增量模型，定义了五个阶段：</p>
+<p>a、起始阶段，包括用户沟通和计划活动，强调定义和细化用例</p>
+<p>b、 细化阶段，包括用户沟通和建模活动，重点是创建分析和设计模型。</p>
+<p>c、构件阶段，细化模型设计，并将设计模型转化为软件构件实现</p>
+<p>d、 转化阶段，将软件从开发人员传递给最终用户，并由用户完成 beta 测试和验收测试</p>
+<p>e、生产阶段，持续地监控软件的运行，并提供技术支持。</p>
+<p><strong>优点：</strong></p>
+<ol>
+<li><p>任何功能开发后就进入测试过程，及早进行验证</p>
+</li>
+<li><p>早期风险识别，采取预防措施</p>
+</li>
+</ol>
+<p><strong>缺点：</strong></p>
+<ol>
+<li><p>需求必须在开始之前完全弄清楚，否怎有可能在架构上出现错误</p>
+</li>
+<li><p>必须有严格的过程管理，以免使过程退化为原始的试→错→改模式</p>
+</li>
+<li><p>如果不加控制的让用户过早接触没有测试完全，版本不稳定的产品可能对用 户和开发团队都带来负面的影响。</p>
+<p><img src="image-20221012140630219.png" alt="image-20221012140630219"></p>
+</li>
+</ol>
+<h1 id="Agile-Development"><a href="#Agile-Development" class="headerlink" title="Agile Development"></a><strong>Agile Development</strong></h1><h2 id="敏捷与敏捷过程"><a href="#敏捷与敏捷过程" class="headerlink" title="敏捷与敏捷过程"></a>敏捷与敏捷过程</h2><p>不管怎么定义敏捷，一定离不开<strong>「短周期地频繁交付」</strong></p>
+<p><strong>敏捷宣言（Agile development manifesto）：</strong></p>
+<ul>
+<li><p>个人和这些个人之间的交流胜过了开发过程和工具</p>
+</li>
+<li><p>可运行的软件胜过了宽泛的文档</p>
+</li>
+<li><p>客户合作胜过了合同谈判</p>
+</li>
+<li><p>对变更的良好响应胜过了按部就班地遵循计划</p>
+</li>
+</ul>
+<h2 id="极限编程（Extreme-Programming-XP-）"><a href="#极限编程（Extreme-Programming-XP-）" class="headerlink" title="极限编程（Extreme Programming (XP)）"></a><strong>极限编程（Extreme Programming (XP)）</strong></h2><blockquote>
+<p><strong>极限编程中的「极限(Extreme)」是指将我们认同的有效软件开发原理和实践应用到极限，频繁地去实践，</strong></p>
+<p>极限编程核心是测试驱动开发、持续集成、用户故事等具体落地的实践</p>
+</blockquote>
+<p>极限编程是敏捷软件开发使用最广泛的一个方法。</p>
+<p><strong>极限编程过程:</strong></p>
+<p><strong>1.策划：</strong></p>
+<ol>
+<li><p>开始创造“用户故事”</p>
+</li>
+<li><p>敏捷团队评估每个故事并分配一个成本（开发周数）</p>
+</li>
+<li><p>故事被分组到一个可交付增量</p>
+</li>
+<li><p>承诺在交付日期进行</p>
+</li>
+<li><p>在第一次递增之后，“项目速度”用于帮助估计后续发行版本的发布日期和进度安排，确定是否对整个开发项目中的所有故事有过分承诺。</p>
+</li>
+</ol>
+<p><strong>2.设计</strong></p>
+<ol>
+<li><p>遵循 KIS（保持简洁）原则</p>
+</li>
+<li><p>鼓励使用 CRC（类-责任-协作者）卡（见第 8 章）</p>
+</li>
+<li><p>对于困难的设计问题，建议创建“尖峰解决方案”——一个设计原型</p>
+</li>
+<li><p>鼓励“重构”： 重构是以不改变代码外部行为而改进其内部结构的方式来修改软件系统的过程。</p>
+</li>
+</ol>
+<p><strong>3.编码</strong></p>
+<ol>
+<li><p>在编码开始之前，建议对故事进行单元测试</p>
+</li>
+<li><p>鼓励“结队编程”</p>
+</li>
+</ol>
+<p><strong>4.测试</strong></p>
+<ol>
+<li><p>所有的单元测试每天都执行</p>
+</li>
+<li><p>“验收测试”，由客户规定技术条件，并且着眼于客户可见的、可评审的系统级的特征和功能。</p>
+</li>
+</ol>
+<p><img src="image-20221012140748468.png" alt="image-20221012140748468"></p>
+<h2 id="工业极限编程（Industrial-XP-（IPX））"><a href="#工业极限编程（Industrial-XP-（IPX））" class="headerlink" title="工业极限编程（Industrial XP （IPX））"></a><strong>工业极限编程（Industrial XP （IPX））</strong></h2><p>IXP 是 XP 的一种有机进化。它由 XP 的最低限要求、以客户为中心、测试驱动精神组成。</p>
+<p>IXP 和 XP 的主要差别在于其管理具有更大的包容性，它扩大了用户角色，升级了技术实践。</p>
+<p>IXP 合并了<strong>六个新实践</strong>：</p>
+<p>Readiness assessment(项目准备)</p>
+<p>Project community(项目社区)</p>
+<p>Project chartering（项目承租）</p>
+<p>Test-driven management （测试驱动管理）</p>
+<p>Retrospectives.（回顾）</p>
+<p>Continuous learning （持续学习）</p>
+<h2 id="Scrum"><a href="#Scrum" class="headerlink" title="Scrum"></a>Scrum</h2><h2 id="Kanban"><a href="#Kanban" class="headerlink" title="Kanban"></a>Kanban</h2><h2 id="DevOps"><a href="#DevOps" class="headerlink" title="DevOps"></a>DevOps</h2><h1 id="Recommended-Process-Model"><a href="#Recommended-Process-Model" class="headerlink" title="Recommended Process Model"></a>Recommended Process Model</h1><h1 id="Human-Aspects-of-Software-Engineering"><a href="#Human-Aspects-of-Software-Engineering" class="headerlink" title="Human Aspects of Software Engineering"></a><strong>Human Aspects of Software</strong> Engineering</h1><h1 id="指导实践的原则"><a href="#指导实践的原则" class="headerlink" title="指导实践的原则"></a>指导实践的原则</h1><h1 id="Understanding-Requirements"><a href="#Understanding-Requirements" class="headerlink" title="Understanding Requirements"></a><strong>Understanding Requirements</strong></h1><h2 id="需求工程（Requirement-engineering）"><a href="#需求工程（Requirement-engineering）" class="headerlink" title="需求工程（Requirement engineering）"></a><strong>需求工程（Requirement engineering）</strong></h2><p><strong>七个任务</strong></p>
+<p><strong>1.起始（Inception）：</strong>在项目起始阶段，要建立基本的理解，包括对问题、谁需要解决方案、所期望解决方案的性质、与项目利益相关者和开发人员之间达成初步交流合作的效果。</p>
+<p><strong>2.导出（Elicitation –gathering requirements）：</strong>询问客户、用户和其他人，系统或产品的目标是什么，想要实现什么，系统和产品如何满足业务的要求，最终系统或产品如何利用于日常工作。</p>
+<p><strong>3.精化（Elaboration-requirement modeling）：</strong>在起始和导出阶段获得的信息将在精化阶段进行扩展和提炼该任务集中于开发一个精确的需求模型。</p>
+<p><strong>4.协商（Negotiation-win-win）：</strong>使用迭代的方法给需求排序，评估每项需求对项目产生的成本和风险，表述内部冲突，删除、组合和修改需求，以便参与各方均能达到一定的满意度，实现双赢。</p>
+<p><strong>5.规格说明（Specification-document，Model，prototype）：</strong>一个规格说明可以是一份写好的文档、一套图形化的模型、一个形式化的数学模型、一组使用场景、一个原型或上述各项的任意组合。</p>
+<p><strong>6.确认（Validation-Quality assess）：</strong>在确认这一步对需求工程的工作产品进行质量评估。</p>
+<p><strong>7.需求管理（Management-Change）：</strong>基于计算机的系统其需求会变更，并且变更的要求贯穿于系统的整个生存期。需求管理是用于帮助项目组在项目进展中标识、控制和跟踪需求以及需求变更的一组活动。</p>
+<h2 id="需求建模的元素"><a href="#需求建模的元素" class="headerlink" title="需求建模的元素"></a><strong>需求建模的元素</strong></h2><p><img src="image-20221012140837195.png" alt="image-20221012140837195"></p>
+<p><img src="image-20221012140842657.png" alt="image-20221012140842657"></p>
+<h1 id="需求建模—推荐的方法"><a href="#需求建模—推荐的方法" class="headerlink" title="需求建模—推荐的方法"></a>需求建模—推荐的方法</h1><h2 id="基于场景-Scenario-Based-建模（功能）"><a href="#基于场景-Scenario-Based-建模（功能）" class="headerlink" title="基于场景(Scenario-Based)建模（功能）"></a>基于场景(Scenario-Based)建模（功能）</h2><p>使用基于场景的方法可以从用户的视角描述系统。</p>
+<p>开发<strong>用例图</strong>时，应列出特定参与者执行的功能或活动。</p>
+<p>例：</p>
+<p><img src="image-20221012140858481.png" alt="image-20221012140858481"></p>
+<p><img src="watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hzbV9KYXNtaW5l,size_16,color_FFFFFF,t_70.png" alt="img"></p>
+<h3 id="用例模板："><a href="#用例模板：" class="headerlink" title="用例模板："></a>用例模板：</h3><table>
+<thead>
+<tr>
+<th align="center"><strong>用例</strong></th>
+<th align="left">在ATM上取款</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><strong>参与者</strong></td>
+<td align="left">取款人</td>
+</tr>
+<tr>
+<td align="center"><strong>目标</strong></td>
+<td align="left">从ATM中取到钱</td>
+</tr>
+<tr>
+<td align="center"><strong>前提条件</strong></td>
+<td align="left">ATM机正常工作，取款人持银行卡取款。</td>
+</tr>
+<tr>
+<td align="center"><strong>触发条件</strong></td>
+<td align="left">取款人将卡插入卡槽</td>
+</tr>
+<tr>
+<td align="center"><strong>基本事件流</strong></td>
+<td align="left">1.     触发条件：取款人将卡插入卡槽。<br>  2.     取款人将卡插入卡槽。<br>  3.     取款人输入密码。 <br> 4.     取款人选择“取款”。  <br>5.     取款人取钱。  <br>6.     取款人选择“退出”。</td>
+</tr>
+<tr>
+<td align="center"><strong>异常事件流</strong></td>
+<td align="left">1. 卡无效或自动柜员机没有所需现金。<br>  2. 密码不正确:重新输入正确的密码。<br>  3. 选择提款时ATM机里的现金不足，提款人取不到钱。 <br> 4. 选择退出时ATM出现问题，卡被吞</td>
+</tr>
+<tr>
+<td align="center"><strong>后置条件</strong></td>
+<td align="left">ATM机恢复待机状态，后台数据库更新用户余额，短信提醒取钱成功与剩余余额</td>
+</tr>
+<tr>
+<td align="center"><strong>优先级</strong></td>
+<td align="left">必须执行</td>
+</tr>
+<tr>
+<td align="center"><strong>可用时</strong></td>
+<td align="left">第一个增量</td>
+</tr>
+<tr>
+<td align="center"><strong>使用频率</strong></td>
+<td align="left">每天多次</td>
+</tr>
+<tr>
+<td align="center"><strong>参与者渠道</strong></td>
+<td align="left">通过操作面板。</td>
+</tr>
+<tr>
+<td align="center"><strong>次要参与者</strong></td>
+<td align="left">记录数据库</td>
+</tr>
+<tr>
+<td align="center"><strong>次要参与者的渠道</strong></td>
+<td align="left">记录数据库、互联网</td>
+</tr>
+<tr>
+<td align="center"><strong>开放问题</strong></td>
+<td align="left">要有防止用户卡被机器吞食的保护机制。<br>定义一个固定的时间长度，取款可以停留在操作界面上而不进行任何操作</td>
+</tr>
+</tbody></table>
+<h2 id="基于类的建模"><a href="#基于类的建模" class="headerlink" title="基于类的建模"></a><strong>基于类的建模</strong></h2><p>基于类建模表示了系统操作的对象、应用于对象间能有效控制的操作、这些对象间的关系以及已定义类之间的协作。</p>
+<p>基于类的分析模型包括类和对象、属性、操作、类的职责协作者（CRC）模型、协作图和包。</p>
+<h3 id="识别分析类"><a href="#识别分析类" class="headerlink" title="识别分析类"></a><strong>识别分析类</strong></h3><p>7种可能的类：</p>
+<p><strong>外部实体</strong>（其他系统、设备、人员），产生或实验基于计算机系统的信息。</p>
+<p><strong>事物</strong>（报告、显示、字母、信号），问题信息域的一部分。</p>
+<p><strong>偶发事件或事件</strong>（所有权转移或完成机器人的一组移动动作），在系统操作环境内发生。</p>
+<p><strong>角色</strong>（经理，工程师，销售人员），由和系统交互的人员扮演</p>
+<p><strong>组织单元</strong>（部门，组，团队），和某个应用系统相关</p>
+<p><strong>场地</strong>（制作车间或码头），建立问题的环境和系统的整体功能</p>
+<p><strong>结构</strong>（传感器、交通工具、计算机），定义了对象的类或与对象相关的类。</p>
+<h3 id="类-职责-协作者建模（Class-responsibility-collaborator-CRC）"><a href="#类-职责-协作者建模（Class-responsibility-collaborator-CRC）" class="headerlink" title="类-职责-协作者建模（Class-responsibility-collaborator CRC）"></a><strong>类-职责-协作者建模（<em>Class-responsibility-collaborator</em> CRC）</strong></h3><p>CRC 模型实际上是表示类的标准索引卡片的集合。每个类一个卡片</p>
+<p><strong>三部分：</strong>顶部写类名，左侧列出类的职责，右侧部分列出了类的协作者。</p>
+<img src="image-20221019150622381.png" alt="image-20221019150622381" style="zoom:50%;">
+
+<p><strong>类：</strong></p>
+<p>Entity classes <strong>实体类</strong>：一般代表保存在数据库中和贯穿应用程序的事物。</p>
+<p>Boundary classes <strong>边界类</strong>：创建用户可见的和在使用软件时交互的接口</p>
+<p>Controller classes <strong>控制类</strong>：管理“控制单元”</p>
+<p><strong>职责：</strong></p>
+<p>职责的基本原则：</p>
+<p><strong>属性</strong>：描述了已经选择包含在需求模型中的类</p>
+<p><strong>操作</strong>：定义了某个对象的行为。</p>
+<p>5 个指导原则：</p>
+<p>1.智能系统应分布所有类中以求地满足问题的需求。</p>
+<p>2.每个职责的说明应尽可能具有普遍性。</p>
+<p>3.信息和与之相关的信息应局限于一个类中而不要分布在多个类中。</p>
+<p>4.信息和与之相关的行为应该放在同一类中。</p>
+<p>5.适合时，职责应由相关类共享。</p>
+<h3 id="UML-图示例"><a href="#UML-图示例" class="headerlink" title="UML 图示例"></a>UML 图示例</h3><p><strong>UML类图</strong>：</p>
+<p>类的关系：</p>
+<ul>
+<li>关联：实例有关系，一对多，一对一等关系</li>
+<li>泛化：is kind of,<strong>继承</strong>，空心三角</li>
+<li>聚合：is part of，空心菱形</li>
+</ul>
+<p><img src="image-20221214151330971.png" alt="image-20221214151330971"></p>
+<p>UML<strong>活动图</strong>在特定场景通过提供迭代流的图形表示来补充用例。例：</p>
+<ul>
+<li>并行使用同步条</li>
+<li>可以用来替代程序流程图，反过来不行</li>
+</ul>
+<img src="image-20221019161158995.png" alt="image-20221019161158995" style="zoom: 80%;">
+
+<p><strong>UML时序图：</strong>作为时间的函数，表示事件如何从一个对象流向另一个对象。</p>
+<img src="image-20221019155252489.png" alt="image-20221019155252489" style="zoom:80%;">
+
+<p>UML<strong>泳道图</strong>是<strong>活动图的一种有用变化</strong>，可以让建模人员表示用例所描述的活动流，同时指示哪个参与者或分析类是由活动矩形所描述的活动来负责。</p>
+<img src="image-20221019160521548.png" alt="image-20221019160521548" style="zoom:80%;">
+
+<h2 id="基于行为模型"><a href="#基于行为模型" class="headerlink" title="基于行为模型"></a><strong>基于行为模型</strong></h2><p>生成行为模型的步骤：</p>
+<p>1.评估所有的用例，以保证完全理解系统内的交互顺序</p>
+<p>2.识别驱动交互顺序的事件，并理解这些事件如何与特定的对象相互关联</p>
+<p>3.为每个用例生成序列</p>
+<p>4.创建系统状态图</p>
+<p>5.评审行为模型以验证准确性和一致性。</p>
+<p><strong>状态图：</strong></p>
+<p><strong>UML 状态图</strong>就是一种行为模型，该图为每个类呈现了主动状态和导致这些主动状态变化的事件。</p>
+<p>例:</p>
+<p><img src="image-20221214151457611.png" alt="image-20221214151457611"></p>
+<img src="image-20221019160823423.png" alt="image-20221019160823423" style="zoom:67%;">
+
+<p><strong>时序图</strong>：</p>
+<p><img src="image-20221214152126659.png" alt="image-20221214152126659"></p>
+<p><strong>泳道图：</strong></p>
+<h1 id="设计概念-Design-Concepts"><a href="#设计概念-Design-Concepts" class="headerlink" title="设计概念(Design Concepts)"></a><strong>设计概念(Design Concepts)</strong></h1><h2 id="软工语境下的设计"><a href="#软工语境下的设计" class="headerlink" title="软工语境下的设计"></a>软工语境下的设计</h2><p><strong>软件工程设计：</strong></p>
+<ul>
+<li>数据&#x2F;类设计——将分析类转换为实现类和数据结构。</li>
+<li>架构设计——定义主要软件结构元素之间的关系。</li>
+<li>接口设计——定义软件元素、硬件元素和终端用户之间的通信方式。</li>
+<li>组件级设计——将结构元素转换为软件组件的过程描述。</li>
+</ul>
+<p><strong>将需求模型映射到设计模型:</strong></p>
+<img src="image-20221019162512098.png" alt="image-20221019162512098" style="zoom: 67%;">
+
+<h2 id="设计过程"><a href="#设计过程" class="headerlink" title="设计过程"></a>设计过程</h2><h2 id="设计原则"><a href="#设计原则" class="headerlink" title="设计原则"></a>设计原则</h2><ol>
+<li><p><strong>抽象（Abstraction）：</strong></p>
+<p><strong>过程抽象</strong>是指具有明确和有限的指令序列（描述动作）</p>
+<p><strong>数据抽象</strong>是描述数据对象的冠名数据集合（描述动作怎么做）</p>
+</li>
+<li><p><strong>体系结构（Architecture）</strong>：软件的整体结构和这种结构为系统提供概念完整方式。构件表示主要的系统元素及其交互。</p>
+</li>
+<li><p><strong>模式（Patterns）</strong>：模式承载了已证实的解决方案的精髓。设计模式描述了在某个特定场景与可能影响模式应用和使用方法的“影响力”中解决某个特定的设计问题的设计结构。</p>
+</li>
+<li><p><strong>关注点分离（Separation of concerns）</strong>：它表明任何复杂问题如果被分解为可以独立解决和优化的若干块，该复杂问题能够更容易的被处理。</p>
+</li>
+<li><p><strong>模块化（Modularity）</strong>：模块化是关注点分离最常见的表现。模块化设计使得开发工作更易规划。</p>
+<img src="image-20221026145144103.png" alt="image-20221026145144103" style="zoom: 50%;">
+</li>
+<li><p><strong>信息隐蔽（Hiding）</strong>信息隐蔽原则[Par72]建议模块应该“具有的特征是：每个模块对其它所有模块都隐藏自己的设计决策”。隐蔽定义并加强了对模块内过程细节的访问约束和对模块所使用的任何局部数据结构的访问约束。</p>
+</li>
+<li><p><strong>功能独立（Functional independence）</strong>：开发具有“专一”功能和低耦合性的模块即可实现功能独立。</p>
+</li>
+<li><p><strong>逐步求精（Stepwise refinement）</strong>：通过连续精化过程细节层次来实现程序的开发，通过逐步分解功能的宏观陈述直到形成程序设计语言的语句来进行层次开发。</p>
+<img src="image-20221026150156120.png" alt="image-20221026150156120" style="zoom:67%;">
+
+<p><font>抽象和逐步求精是互补的概念。</font></p>
+</li>
+<li><p><strong>方面（Aspects）</strong>：一个方面作为一个独立的模块进行实施，而不是作为“分割的”或者和许多构件“纠缠的”软件片段进行实施。设计体系结构应当支持定义一个方面，该方面即一个模块，该模块能够使该关注点经过它横切的所有其他关注点而得到实施。</p>
+</li>
+<li><p><strong>重构（Refactoring）</strong>：重构是使用这样一种方式改变软件系统的过程：不改变代码的外部行为而是改进其内部结构。</p>
+</li>
+<li><p>**面向对象的设计概念（OO design concepts）:**面向对象概念（类、对象、继承、消息和多态）</p>
+</li>
+<li><p><strong>设计类（Design Class</strong>）：提供设计细节，使程序得以实施。</p>
+<ol>
+<li>完整（Complete）—（包括所有必要的属性和方法)和充分(只包含实现类意图所需的方法)。</li>
+<li>原生性（Primitiveness）——每个类方法都专注于提供一个服务。</li>
+<li>高内聚（High cohesion）——小的，集中的，专注的class。</li>
+<li>低耦合（Low coupling）——类的协作保持在最小值</li>
+</ol>
+</li>
+</ol>
+<p><strong>设计概念强调了：</strong></p>
+<ol>
+<li>抽象的必要性，它提供了一种创造可重用软件构件的方法</li>
+<li>体系结构的重要性，它使得能够更好地理解系统整体结构</li>
+<li>基于模式的工程的有益性，它是一项用于已证明能力的软件的设计技术</li>
+<li>关注点分离和有效的模块化的价值，他们使得软件更容易理解、更容易测试以及更容易维护。</li>
+<li>信息隐藏的直接作用，当错误发生时，它能够减少负面影响的传播</li>
+<li>功能独立的影响，他是构造有效模块的标准</li>
+<li>求精作为一种设计方法的作用</li>
+<li>横切系统需求方面的考虑</li>
+<li>重构的应用，他是为了优化已导出的设计</li>
+<li>面向对象的类和与类相关特征的重要性</li>
+</ol>
+<h2 id="设计模型"><a href="#设计模型" class="headerlink" title="设计模型"></a>设计模型</h2><p><img src="image-20221026150428993.png" alt="image-20221026150428993"></p>
+<p><strong>数据设计元素</strong>：数据设计创建在高级抽象级上表示的数据模型和信息模型。</p>
+<p><strong>体系结构设计元素</strong>：体系结构设计元素通常描述为一组相互关联系统的子系统，且常常从需求模型中的分析包中派生出来。</p>
+<p><strong>接口设计元素</strong>：软件接口设计元素描述了信息如何流入和流出系统以及被定义为体系结构一部分的构件之间是如何通信的。</p>
+<p>&#x3D;&#x3D;接口设计有 3 个重要的元素：&#x3D;&#x3D;</p>
+<p>（1）用户界面</p>
+<p>（2）和其他系统、设备、网络或其他信息生成者或使用者的外部接口</p>
+<p>（3）各种设计构件之间的内部接口</p>
+<p><strong>构件级设计元素</strong>：软件的构件级设计完整地描述了每个软件构件的内部细节。构件级设计为所以局部数据对象定义数据结构，为所有在构件内发生的处理定义算法细节，并定义允许访问所有构件操作的接口。</p>
+<p><strong>部署级设计元素：</strong>部署级设计元素指明软件功能和子系统将如何在支持软件的物理计算环境内分布。</p>
+<h1 id="体系结构设计Architectural-Design-–-A-Recommended-Approach"><a href="#体系结构设计Architectural-Design-–-A-Recommended-Approach" class="headerlink" title="体系结构设计Architectural Design – A Recommended Approach"></a><strong>体系结构设计</strong>Architectural Design – A Recommended Approach</h1><h2 id="软件体系结构"><a href="#软件体系结构" class="headerlink" title="软件体系结构"></a>软件体系结构</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>**程序或计算机系统的软件体系结构是指系统的一个或者多个结构，它包括&#x3D;&#x3D;软件构件&#x3D;&#x3D;、&#x3D;&#x3D;构件的外部可见属性&#x3D;&#x3D;以及&#x3D;&#x3D;它们之间的相互联系&#x3D;&#x3D;**。</p>
+<p><strong>体系结构&#x3D;&#x3D;并非可运行的程序&#x3D;&#x3D;。</strong></p>
+<p>确切的说，它是一种表达,是能够：</p>
+<ol>
+<li>对设计在满足既定需求方面的<strong>有效性进行分析</strong></li>
+<li>在设计变更相对容易的阶段，考虑体系结构<strong>可能的替换方案</strong></li>
+<li><strong>降低</strong>与软件构造相关的<strong>风险</strong></li>
+</ol>
+<h3 id="体系结构重要的-3-个关键原因"><a href="#体系结构重要的-3-个关键原因" class="headerlink" title="体系结构重要的 3 个关键原因"></a><strong>体系结构重要的 3 个关键原因</strong></h3><ol>
+<li>软件体系结构的表示有助于对计算机系统开发感兴趣的各方展开交流。</li>
+<li>体系结构突出了早期的设计决策，这些决策对随后所有的软件工程工作有深远影响，同时对系统作为一个可运行实体的最后成功有重要作用</li>
+<li>体系结构“构建了一个相对小的、易于理解的模型，该模型描述了系统如何构成以及其构件如何一起工作</li>
+</ol>
+<h3 id="体系结构风格"><a href="#体系结构风格" class="headerlink" title="体系结构风格"></a><strong>体系结构风格</strong></h3><ol>
+<li>以数据为中心的体系结构。</li>
+<li>数据流体系结构。</li>
+<li>调用和返回体系结构</li>
+<li>面向对象体系结构</li>
+<li>层次体系结构</li>
+</ol>
+<h3 id="体系结构环境图（ACD）"><a href="#体系结构环境图（ACD）" class="headerlink" title="体系结构环境图（ACD）"></a><strong>体系结构环境图（ACD）</strong></h3><p>上级系统：这些系统把目标系统作为某些高层处理方案的一部分</p>
+<p>下级系统：这些系统被目标系统使用，并为完成目标系统的功能提供必要的数据和处理</p>
+<p>同级系统：这些系统在对等的基础上相互作用</p>
+<p>参与者：通过产生和消耗必要处理所需的信息，实现与目标系统交互的实体（人，设备）</p>
+<p><img src="image-20221210134301873.png" alt="image-20221210134301873"></p>
+<h1 id="Component-Level-Design"><a href="#Component-Level-Design" class="headerlink" title="Component-Level Design"></a><strong>Component-Level Design</strong></h1><ul>
+<li><p>体系设计——建筑平面图、结构、房间和外部环境之间的连接机制</p>
+</li>
+<li><p>构件级设计——每个房间的内部<strong>细节设计</strong></p>
+</li>
+</ul>
+<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><ol>
+<li><p>构件是计算机软件中的一个模块化的构造块。</p>
+</li>
+<li><p>OMG 定义构件：系统中模块化的、可部署的和可替换的部件，该部件封装了实现并暴露一组接口。</p>
+</li>
+</ol>
+<p>关于什么是组件的三个重要观点：</p>
+<ul>
+<li><p><strong>面向对象的观点（Object-Oriented view）：</strong>构件包括一组协作的类。</p>
+<p>  <img src="image-20221210135030701.png" alt="image-20221210135030701"></p>
+</li>
+<li><p><strong>传统观点（Traditional View）：</strong>一个构件就是程序的一个功能要素，程序由处理逻辑及实现处理逻辑所需的每部数据结构以及能够保证构件被调用和实现数据传递的结构构成。</p>
+<p>  <img src="image-20221210135053957.png" alt="image-20221210135053957"></p>
+</li>
+<li><p><strong>流程相关的观点（Process-related view）</strong>：构建使用现有软件组件或设计模式的系统。</p>
+</li>
+</ul>
+<h2 id="设计基于类的构建"><a href="#设计基于类的构建" class="headerlink" title="设计基于类的构建"></a>设计基于类的构建</h2><h3 id="基本设计原则"><a href="#基本设计原则" class="headerlink" title="基本设计原则"></a><strong>基本设计原则</strong></h3><p><strong>4个基本设计原则和3个附加打包原则：</strong></p>
+<ol>
+<li><strong>开闭原则（Open-Closed Principle ，OCP）：</strong>模块应该对外延具有开放性，对修改具有封闭性。符合开放封闭原则的模块都有两个主要特性：<ol>
+<li><strong>它们 “面向扩展开放（Open For Extension）”：</strong>也就是说模块的行为是能够被扩展的。当应用程序的需求变化时，我们可以使模块表现出全新的或与以往不同的行为，以满足新的需求。</li>
+<li><strong>它们 “面向修改封闭（Closed For Modification）”：</strong>模块的源代码是不能被侵犯的，任何人都不允许修改已有源代码。</li>
+</ol>
+</li>
+<li><strong>依赖倒置原则（Dependency Inversion Principle ，DIP）：</strong>依赖于抽象，而非具体实现。</li>
+<li><strong>Liskov 替换原则（Liskov Substitution Principle (LSP)）：</strong>子类可以替换他们的基类。</li>
+<li><strong>接口分离原则（The Interface Segregation Principle (ISP)）：</strong>多个客户专用接口比一个通用接口好</li>
+<li><strong>发布复用等价性原则（The Release Reuse Equivalency Principle，REP）：</strong>复用的粒度就是发布的粒度</li>
+<li><strong>共同封装原则（The Common Closure Principle (CCP)）：</strong>一同变更的类应该合在一起</li>
+<li><strong>共同复用原则（The Common Reuse Principle (CRP））：</strong>不能一起复用的类不能被分到一组</li>
+</ol>
+<h3 id="设计准则"><a href="#设计准则" class="headerlink" title="设计准则"></a>设计准则</h3><ul>
+<li><p><strong>内聚性（Cohesion）：</strong>内聚性意味着构件或者类只封装那些相互关联密切，以及与构件或类自身有亲密关系的属性和操作。</p>
+<ul>
+<li><p>功能内聚：主要通过操作来体现，当一个模块只完成某一组特定操作并返回结果时，就称此模块是功能内聚的。</p>
+</li>
+<li><p>分层内聚：高层能够访问低层的服务，但低层不能访问高层的服务。</p>
+</li>
+<li><p>通信内聚：访问相同数据的所有操作被定义在同一个类中。（数据的查询，访问，存储）</p>
+</li>
+</ul>
+</li>
+<li><p><strong>耦合性（Coupling）：</strong>从高到低</p>
+</li>
+<li><p>耦合是类之间彼此联系程度的一种定性度量。随着类（构件）相互依赖越来越多，类之间的耦合程度亦会增加。</p>
+</li>
+<li><p>内容耦合：暗中修改其他构件的内部数据，这违反了信息隐蔽原则</p>
+</li>
+<li><p>公用耦合：当大量的构件都要使用同一个全局变量时发生这种耦合</p>
+</li>
+<li><p>控制耦合：当操作 A 调用操作 B，并向 B 传递控制标记时，就会发生这种耦合。</p>
+</li>
+<li><p>标记耦合：当类 B 被声明为类 A 某一操作中的一个参数类型时，就会发生这种耦合。</p>
+</li>
+<li><p>数据耦合：当操作需要传递长串的数据参数时，就会发生这种耦合。</p>
+</li>
+<li><p>例程调用耦合：当一个操作调用另一个操作时，就会发生这种耦合。</p>
+</li>
+<li><p>类型使用耦合：当构件 A 使用了在构件 B 中定义的一个数据类型时，就会发生这种耦合。</p>
+</li>
+<li><p>包含或者导入耦合：当构件 A 引入或者包含一个构件 B 的包或者内容时，就会发生这种耦合。</p>
+</li>
+<li><p>外部耦合：当一个构件和基础设施构件进行通信和协作时，就会发生这种耦合。</p>
+</li>
+</ul>
+<p><strong>为什么要高内聚?</strong></p>
+<p>模块之间的关系越紧密,出错就越少!</p>
+<p><strong>为什么要低耦合?</strong></p>
+<p>子程序间的关系越复杂,就会产生更多的意想不到的错误!会给以后的维护工作带来很多麻烦!</p>
+<p>高内聚低耦合，是软件工程中的概念，是判断设计好坏的标准，主要是面向对象的设计，主要是看类的内聚性是否高，耦合度是否低。</p>
+<h2 id="基于O-O的组件设计"><a href="#基于O-O的组件设计" class="headerlink" title="基于O-O的组件设计"></a>基于O-O的组件设计</h2><p><img src="image-20221214155233138.png" alt="image-20221214155233138"></p>
+<p>静态类图</p>
+<p>动态协作图（等价于时序图）</p>
+<h2 id="传统组件级设计"><a href="#传统组件级设计" class="headerlink" title="传统组件级设计"></a>传统组件级设计</h2><p><img src="image-20221214155441736.png" alt="image-20221214155441736"></p>
+<h2 id="执行组件级设计"><a href="#执行组件级设计" class="headerlink" title="执行组件级设计"></a>执行组件级设计</h2><h3 id="组件级设计"><a href="#组件级设计" class="headerlink" title="组件级设计"></a>组件级设计</h3><ol>
+<li><p>确定与问题域对应的所有设计类。</p>
+</li>
+<li><p>确定与基础架构域对应的所有设计类。</p>
+</li>
+<li><p>详细说明所有没有作为可重用组件获得的设计类。</p>
+<ol>
+<li>指定类或组件协作时的消息细节。</li>
+<li>为每个组件确定适当的接口。</li>
+<li>详细说明属性并定义实现它们所需的数据类型和数据结构。</li>
+<li>详细描述每个操作中的处理流程。</li>
+</ol>
+</li>
+<li><p>描述持久数据源(数据库和文件)并确定管理它们所需的类。</p>
+</li>
+<li><p>开发并详细描述一个类或组件的行为表示。</p>
+</li>
+<li><p>精心设计部署图，以提供额外的实现细节。</p>
+<p> <img src="image-20221210141113852.png" alt="image-20221210141113852"></p>
+</li>
+<li><p>考虑每个组件级设计表示形式，并始终考虑备选方案。</p>
+</li>
+</ol>
+<h2 id="专门的组件级设计"><a href="#专门的组件级设计" class="headerlink" title="专门的组件级设计"></a>专门的组件级设计</h2><h3 id="WebApps的组件级设计"><a href="#WebApps的组件级设计" class="headerlink" title="WebApps的组件级设计"></a>WebApps的组件级设计</h3><p><strong>WebApp组件是:</strong></p>
+<ul>
+<li><p>定义良好的内聚函数，用于操作内容或为最终用户提供计算或数据处理。</p>
+</li>
+<li><p>内容和功能的内聚包，为最终用户提供一些所需的功能。</p>
+</li>
+</ul>
+<h2 id="组件重构（Component-refactoring）"><a href="#组件重构（Component-refactoring）" class="headerlink" title="组件重构（Component refactoring）"></a>组件重构（Component refactoring）</h2><h1 id="User-Experience-Design"><a href="#User-Experience-Design" class="headerlink" title="User Experience Design."></a>User Experience Design.</h1><h2 id="用户体验元素"><a href="#用户体验元素" class="headerlink" title="用户体验元素"></a>用户体验元素</h2><p><img src="image-20221210142236309.png" alt="image-20221210142236309"></p>
+<ul>
+<li>信息架构</li>
+<li>用户界面设计</li>
+<li>可用性工程</li>
+<li>可视化设计</li>
+</ul>
+<p><img src="image-20221210142751755.png" alt="image-20221210142751755"></p>
+<h2 id="黄金原则"><a href="#黄金原则" class="headerlink" title="黄金原则"></a>黄金原则</h2><h3 id="用户操纵控制"><a href="#用户操纵控制" class="headerlink" title="用户操纵控制"></a>用户操纵控制</h3><p>（1）以不强迫用户进入不必要的或不希望的动作的方式来定义交互模式</p>
+<p>（2）允许用户交互被中断和撤销</p>
+<p>（3）当技能级别增长时可以使交互流线化并允许定制交互</p>
+<p>（4）使用用户与内部技术细节隔离开来</p>
+<p>（5）设计应允许用户与出现在屏幕上的对象直接交互</p>
+<h3 id="减少用户的记忆负担"><a href="#减少用户的记忆负担" class="headerlink" title="减少用户的记忆负担"></a><strong>减少用户的记忆负担</strong></h3><p>（1）减少对短期记忆的要求</p>
+<p>（2）建立有意义的缺省</p>
+<p>（3）定义直观的快捷方式</p>
+<p>（4）以不断进展的方式揭晓信息</p>
+<h3 id="保持界面一致"><a href="#保持界面一致" class="headerlink" title="保持界面一致"></a><strong>保持界面一致</strong></h3><p>（1）允许用户当前任务放入有意义的环境中</p>
+<p>（2）在应用系统家族内保持一致性</p>
+<p>（3）如果过去的交互模型已经建立起了用户期望，除非有迫不得已的理由，doze 不要改变它。</p>
+<h2 id="UI分析与设计"><a href="#UI分析与设计" class="headerlink" title="UI分析与设计"></a>UI分析与设计</h2><h3 id="UI分析任务"><a href="#UI分析任务" class="headerlink" title="UI分析任务"></a>UI分析任务</h3><p><img src="image-20221214155932626.png" alt="image-20221214155932626"></p>
+<h3 id="UI设计模型"><a href="#UI设计模型" class="headerlink" title="UI设计模型"></a>UI设计模型</h3><p>工程师建立<strong>用户模型</strong>。软件工程师创建<strong>设计模型</strong>。最终用户在脑海中对界面产生映像，称为用户的<strong>心理模型</strong>或系统感觉。系统的实现者创建<strong>实现模型</strong>。</p>
+<ul>
+<li><strong>用户模型：</strong>确定了系统最终用户的轮廓。</li>
+<li><strong>设计模型：</strong>用户界面的设计</li>
+<li><strong>心理模型：</strong>最终用户在脑海里对系统产生的印象。</li>
+<li><strong>实现模型：</strong>组合了计算机系统的外在表现，结合了所有用来描述系统语法和语言的支撑信息。</li>
+</ul>
+<h3 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h3><p>用户界面的分析和设计过程是迭代的，用户界面分析和设计过程<strong>开始于螺旋模型的内部</strong>，并且包括 4 个阶段：</p>
+<ul>
+<li>界面分析及建模。</li>
+<li>界面设计。</li>
+<li>界面构造。</li>
+<li>界面确认。</li>
+</ul>
+<p><img src="image-20221210143134777.png" alt="image-20221210143134777"></p>
+<p>界面设计的目标是定义一组界面对象和动作，使得用户能够以满足系统所定义的每个使用目标的方式完成所有定义对的任务。</p>
+<h2 id="UX分析与设计"><a href="#UX分析与设计" class="headerlink" title="UX分析与设计"></a>UX分析与设计</h2><h2 id="UI设计"><a href="#UI设计" class="headerlink" title="UI设计"></a>UI设计</h2><h3 id="接口设计步骤"><a href="#接口设计步骤" class="headerlink" title="接口设计步骤"></a><strong>接口设计步骤</strong></h3><ol>
+<li>使用在接口分析期间开发的信息，<strong>定义接口对象和操作</strong>。</li>
+<li>定义将导致用户界面状态改变的事件**(用户操作)**。模仿这种行为。</li>
+<li><strong>描述每个界面状态</strong>，就像它将实际地看给最终用户一样。</li>
+<li>指示用户如何从接口提供的信息中解释系统的状态。</li>
+</ol>
+<h3 id="例子SafeHome"><a href="#例子SafeHome" class="headerlink" title="例子SafeHome"></a>例子<em>SafeHome</em></h3><ul>
+<li><p><strong>用例：</strong>为了远程访问SafeHome，房主提供一个标识符和一个密码。这些定义了访问的级别（如并非所有用户均可以重新配置系统）并提供安全保证。一旦确认身份，用户（具有全部访问权限）检查系统状态并通过启动或关闭系统改变状态。用户通过显示房子的建筑平面图、观察每个安全传感器、显示每个当前配置区域以及必要时修改区域而重新配置系统。用户通过策略地放置的摄像头观察房子内部。用户可以摇动和变焦每个摄像头而提供房子内部的不同视角。</p>
+</li>
+<li><p><strong>定义对象和动作</strong>：</p>
+<p>  <img src="image-20221210144633032-16706547958251.png" alt="image-20221210144633032"></p>
+</li>
+<li><p><strong>分类对象：</strong></p>
+<p>  <img src="image-20221210144807793.png" alt="image-20221210144807793"></p>
+</li>
+<li><p><strong>屏幕布局：</strong></p>
+<p>  <img src="image-20221210144917207.png" alt="image-20221210144917207"></p>
+</li>
+</ul>
+<h3 id="UI设计模式"><a href="#UI设计模式" class="headerlink" title="UI设计模式"></a><strong>UI设计模式</strong></h3><p>设计模式是为特定的、有良好边界的设计问题规定设计解决方案的一种抽象。</p>
+<p><strong>界面设计模板（win, android, os）</strong></p>
+<ul>
+<li>鼠标，滚动条，下拉菜单，弹出窗口，状态栏，图标，进度条，树形列表，触摸操作</li>
+</ul>
+<h2 id="设计评价"><a href="#设计评价" class="headerlink" title="设计评价"></a>设计评价</h2><p><img src="image-20221210145132156.png" alt="image-20221210145132156"></p>
+<h2 id="可用性和可访问性"><a href="#可用性和可访问性" class="headerlink" title="可用性和可访问性"></a>可用性和可访问性</h2><p>可用性是指用户在使用高科技产品所提供的功能和特性时，对使用的容易程度和有效程度的定量测量。</p>
+<h2 id="传统软件的用户体验和移动性"><a href="#传统软件的用户体验和移动性" class="headerlink" title="传统软件的用户体验和移动性"></a>传统软件的用户体验和移动性</h2><h1 id="Design-for-Mobility"><a href="#Design-for-Mobility" class="headerlink" title="Design for Mobility."></a>Design for Mobility.</h1><h2 id="挑战"><a href="#挑战" class="headerlink" title="挑战"></a>挑战</h2><h2 id="移动开发生命周期"><a href="#移动开发生命周期" class="headerlink" title="移动开发生命周期"></a>移动开发生命周期</h2><h2 id="移动架构设计"><a href="#移动架构设计" class="headerlink" title="移动架构设计"></a>移动架构设计</h2><h2 id="上下文感知APP"><a href="#上下文感知APP" class="headerlink" title="上下文感知APP"></a>上下文感知APP</h2><h2 id="网页设计金字塔"><a href="#网页设计金字塔" class="headerlink" title="网页设计金字塔"></a>网页设计金字塔</h2><h2 id="组件级别设计"><a href="#组件级别设计" class="headerlink" title="组件级别设计"></a>组件级别设计</h2><h2 id="移动设计质量"><a href="#移动设计质量" class="headerlink" title="移动设计质量"></a>移动设计质量</h2><p>质量属性（quality attributes ）</p>
+<p><img src="image-20221210165149285.png" alt="image-20221210165149285"></p>
+<p><img src="image-20221210165247462.png" alt="image-20221210165247462"></p>
+<p><strong>六个特性：功能性、可靠性、易用性、效率、维护性、可移植性</strong></p>
+<ol>
+<li><strong>功能性：</strong>当软件在指定条件下使用时，软件产品提供满足明确和隐含要求的功能的能力<ol>
+<li>适合性：软件产品为指定的任务和用户目标提供一组合适的功能的能力</li>
+<li>准确性：软件产品提供具有所需精度的正确或相符的结果或效果的能力</li>
+<li>互操作性：软件产品与一个或更多的规定系统进行交互的能力</li>
+<li>安全保密性：软件产品保护信息和数据的能力</li>
+</ol>
+</li>
+<li><strong>可靠性：</strong>在指定条件使用时，软件产品维护规定的性能级别的能力<ol>
+<li>成熟性：软件产品为避免由软件中故障而导致失效的能力</li>
+<li>容错性：在软件出现故障或者违反其指定接口的情况下，软件产品维持规定的性能级别的能力</li>
+<li>易恢复性：在失效发生的情况下，软件产品重建规定的性能级别并恢复受直接影响的数据的能力</li>
+</ol>
+</li>
+<li><strong>易用性：</strong>在指定条件下使用时，软件产品被理解、学习、使用和吸引用户的能力<ol>
+<li>易理解性：使用用户能理解软件是否合适及如何能将软件用于特定的任务的能力</li>
+<li>易学性：使用用户能学习其应用的能力</li>
+<li>易操作性：使用户能操作和控制它的能力</li>
+<li>吸引性：软件产品吸引用户的能力</li>
+</ol>
+<p>	</p>
+</li>
+<li><strong>效率：</strong>在规定条件下，相对于所用资源的数量，软件产品可提供适当性能的能力<ol>
+<li>时间特性：软件执行其功能时，提供适当的响应和处理时间以及吞吐率的能力</li>
+<li>资源利用性：软件执行其功能时，使用合适数量和类别的资源的能力</li>
+</ol>
+</li>
+<li><strong>维护性：</strong>软件产品可被修改的能力。包括纠正、改进或对环境、需求和功能规格说明变化的适应<ol>
+<li>易分析性：诊断软件中的缺陷或失效原因或识别待修改部分的能力</li>
+<li>易改变性：使指定的修改可以被实现的能力</li>
+<li>稳定性：避免由于软件修改而造成意外结果的能力</li>
+<li>易测试性：使已修改软件能被确认的能力</li>
+</ol>
+</li>
+<li><strong>可移植性：</strong>软件产品从一种环境迁移到另外一种环境的能力<ol>
+<li>适应性：无需采用额外的活动或手段就可适应不同指定环境的能力</li>
+<li>易安装性：软件产品在指定环境中被安装的能力</li>
+<li>共存性：在公共环境中同与其分享公共资源的其他独立软件共存的能力</li>
+<li>易替换性：在同样的环境下，替代另一个相同用途的指定软件产品的能力</li>
+</ol>
+</li>
+</ol>
+<h1 id="Pattern-Based-Design"><a href="#Pattern-Based-Design" class="headerlink" title="Pattern-Based Design"></a>Pattern-Based Design</h1><h2 id="Design-Pattern"><a href="#Design-Pattern" class="headerlink" title="Design Pattern"></a>Design Pattern</h2><h2 id="基于模式的软件设计"><a href="#基于模式的软件设计" class="headerlink" title="基于模式的软件设计"></a>基于模式的软件设计</h2><h2 id="体系结构设计"><a href="#体系结构设计" class="headerlink" title="体系结构设计"></a>体系结构设计</h2><h2 id="组件级设计模式"><a href="#组件级设计模式" class="headerlink" title="组件级设计模式"></a>组件级设计模式</h2><h2 id="Anti-patterns"><a href="#Anti-patterns" class="headerlink" title="Anti-patterns"></a>Anti-patterns</h2><h2 id="移动设计模式"><a href="#移动设计模式" class="headerlink" title="移动设计模式"></a>移动设计模式</h2><h1 id="Software-Testing-Strategies"><a href="#Software-Testing-Strategies" class="headerlink" title="Software Testing Strategies"></a><strong>Software Testing Strategies</strong></h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p><strong>测试：</strong>测试是在交付给最终用户之前以特定意图找出错误为目的来执行程序的过程。</p>
+<p><strong>验证与确认</strong>（Verification and Validation，V&amp;V）：</p>
+<ul>
+<li><strong>验证</strong>是指确保软件正确地实现某一特定功能的一系列活动。</li>
+<li><strong>确认</strong>是指确保开发的软件可追溯到客户需求的另外一系列活动。</li>
+</ul>
+<p><img src="image-20221210151413472.png" alt="image-20221210151413472"></p>
+<h2 id="测试策略：从小到大"><a href="#测试策略：从小到大" class="headerlink" title="测试策略：从小到大"></a>测试策略：从小到大</h2><p><img src="image-20221214160040929.png" alt="image-20221214160040929"></p>
+<h1 id="Testing-Conventional-Applications"><a href="#Testing-Conventional-Applications" class="headerlink" title="Testing Conventional Applications"></a><strong>Testing Conventional Applications</strong></h1><h2 id="单元测试"><a href="#单元测试" class="headerlink" title="单元测试"></a><strong>单元测试</strong></h2><h3 id="概念-1"><a href="#概念-1" class="headerlink" title="概念"></a>概念</h3><p><strong>侧重点：</strong></p>
+<ul>
+<li><p>单元测试侧重于软件设计的<strong>最小单元（软件构件或模块）的验证工作</strong>。</p>
+</li>
+<li><p>单元测试侧重于<strong>构件的内部处理逻辑和数据结构</strong>。</p>
+</li>
+</ul>
+<p>可以对多个构件并行执行。</p>
+<p>测试模块的接口是为了保证被测试程序单元的信息能够正常地流入和流出；</p>
+<p>检查局部数据结构以确保临时存储的数据在算法的整个执行过程中能维持其完善性。</p>
+<p>执行控制结构中的所有独立路径（基本路径）以确保模块中的所有语句至少执行一次。</p>
+<p>测试边界条件确保模块在到达边界值得极限或受限处理的情形下仍能正确执行。</p>
+<p>最后要对所有的错误处理路径进行测试。</p>
+<p>在单元测试期间，选择测试的执行路径是最基本的任务。</p>
+<p>边界测试时最重要的单元测试任务之一。</p>
+<h3 id="单元测试过程"><a href="#单元测试过程" class="headerlink" title="单元测试过程"></a><strong>单元测试过程</strong></h3><p><img src="image-20221210152614210.png" alt="image-20221210152614210"></p>
+<p><strong>驱动模块：</strong>接收测试用例数据，将这些数据传递给被测模块，并输出结果。</p>
+<p><strong>桩：</strong>替换那些从属于被测模块的模块</p>
+<p>当设计高内聚的构件时，就可以简化单元测试。当构件只强调一个功能时，测试用例数就会降低，且比较容易预见错误和发现错误。</p>
+<h2 id="集成测试"><a href="#集成测试" class="headerlink" title="集成测试"></a><strong>集成测试</strong></h2><h3 id="概念-2"><a href="#概念-2" class="headerlink" title="概念"></a>概念</h3><p>集成测试时构造软件体系结构的系统化技术，同时也是进行一些旨在发现与接口相关的错误的测试。</p>
+<p><strong>集成测试的目标是利用单元测试的构件建立设计中描述的程序结构。</strong></p>
+<ul>
+<li><p><strong>自顶向下集成：</strong>自顶向下集成测试是一种构造软件体系结构的增量方法。</p>
+</li>
+<li><p><strong>深度优先：</strong>深度优先集成是首先集成位于程序结构中主控路径上的所有控件。</p>
+</li>
+<li><p><strong>广度优先：</strong>广度优先集成首先沿水平方向，将属于同一层的构件集成起来。</p>
+</li>
+</ul>
+<h3 id="自顶向下集成过程："><a href="#自顶向下集成过程：" class="headerlink" title="自顶向下集成过程："></a><strong>自顶向下集成过程：</strong></h3><ol>
+<li><p>主控模块作为测试驱动模块，用桩模块代替直接附属的下层模块；</p>
+</li>
+<li><p>根据所选的集成策略（深度优先&#x2F;广度优先），每次用一个实际模块替换一个桩模块；</p>
+</li>
+<li><p>每集成一个模块都进行测试；</p>
+</li>
+<li><p>完成每个测试集之后，用实际模块替换另一个桩模块；</p>
+</li>
+<li><p>可以进行回归测试（即全部或部分地重复已做过的测试），以避免引入新错误。</p>
+</li>
+<li><p>回到第 2 步继续执行此过程，直到完成整个程序结构的构造。</p>
+</li>
+</ol>
+<h3 id="自底向上集成测试："><a href="#自底向上集成测试：" class="headerlink" title="自底向上集成测试："></a><strong>自底向上集成测试：</strong></h3><p>就是从原子模块（程序结构的最底层构件）开始进行构造和测试。</p>
+<p><strong>自底向上集成测试过程：</strong></p>
+<p>1.连接底层构件以构成完成特定子功能的簇。</p>
+<p>2.编写驱动模块（测试的控制程序）以协调测试用例的输入和输出</p>
+<p>3.测试簇</p>
+<p>4.去掉驱动程序，沿着程序结构向上逐步连接簇</p>
+<p><img src="image-20221214160510145.png" alt="image-20221214160510145"></p>
+<h2 id="回归测试"><a href="#回归测试" class="headerlink" title="回归测试"></a><strong>回归测试</strong></h2><p>回归测试重新执行已测试过的某些子集，以确保变更没有传播不期望的副作用。</p>
+<p>回归测试有助于保证变更不引入无意思行为或额外的错误。</p>
+<p>回归测试可以手工进行，方法是重新执行所以测试用例的子集，或者利用捕捉&#x2F;回放工具自</p>
+<p>动进行。</p>
+<h1 id="Testing-Object-Oriented-Applications"><a href="#Testing-Object-Oriented-Applications" class="headerlink" title="Testing Object-Oriented Applications"></a><strong>Testing Object-Oriented Applications</strong></h1><h2 id="面向对象软件的测试策略"><a href="#面向对象软件的测试策略" class="headerlink" title="面向对象软件的测试策略"></a><strong>面向对象软件的测试策略</strong></h2><p>面向对象软件的<strong>类测试</strong>等同于传统软件的<strong>单元测试</strong>。</p>
+<p>不同的是：</p>
+<ul>
+<li><p>传统软件单元测试侧重于<strong>模块的算法细节和模块接口数据</strong>；</p>
+</li>
+<li><p>面向对象类的测试侧重于封装在该类中的<strong>操作和类的状态行为</strong>。</p>
+</li>
+</ul>
+<p>封装的类是单元测试的重点，但不再孤立地对单个操作进行测试，而是将其作为类的一部分。</p>
+<p>簇测试是面向对象软件集成测试中的一个步骤。</p>
+<h2 id="确认测试（Validation-Testing）"><a href="#确认测试（Validation-Testing）" class="headerlink" title="确认测试（Validation Testing）"></a><strong>确认测试（Validation Testing）</strong></h2><p>确认测试准则：<strong>软件确认是通过一系列表明与软件需求相符合的测试而获得的。</strong></p>
+<h3 id="α测试（Alpha-testing）内部测试："><a href="#α测试（Alpha-testing）内部测试：" class="headerlink" title="α测试（Alpha testing）内部测试："></a><strong>α测试（Alpha testing）内部测试：</strong></h3><p>α测试测试是由代表性的最终用户<strong>在开发者的场所进行</strong>。软件在自然的环境下使用，开发者站在用户的后面观看，并记录错误和使用问题。α测试在受控的环境下测试。</p>
+<h3 id="β测试（Beta-testing）外部测试："><a href="#β测试（Beta-testing）外部测试：" class="headerlink" title="β测试（Beta testing）外部测试："></a><strong>β测试（Beta testing）外部测试：</strong></h3><p>又称<strong>客户验收测试，Acceptance testing：</strong>β测试在一个或多个最终用户场所进行。与α测试不同，开发者通常不在场，因此，β测试是在不为开发者控制的环境下软件的“现场”应用。是在不可控的环境下测试。</p>
+<h2 id="系统测试"><a href="#系统测试" class="headerlink" title="系统测试"></a><strong>系统测试</strong></h2><p>系统测试实际上是对整个基于计算机的系统进行一系列不同考验的测试。所有测试都是为了验证系统成分已经正确地集成在一起，并且完成了指派的功能。</p>
+<p>**恢复测试（Recovery testing）:**通过各种方式强制让软件以各种方式失败并验证恢复是否正确执行。</p>
+<p><strong>安全测试（Security testing）：</strong>安全测试验证建立在系统内的保护机制是否能够实际保护系统不受非法入侵。</p>
+<p><strong>压力测试（Stress testing）：</strong>压力测试的目的是是软件面对非正常的情形。是一种要求以非正常数量、频率或容量的方式进行彻底评估。</p>
+<p><strong>性能测试（Performance testing）：</strong>性能测试用来测试软件在集成环境中的运行性能。</p>
+<p><strong>部署测试（Deployment testing）：</strong>部有时也将署测试称为配置测试，是在软件将要在其中运行的每一种环境中测试软件。</p>
+<h2 id="测试技术"><a href="#测试技术" class="headerlink" title="测试技术"></a><strong>测试技术</strong></h2><h3 id="白盒测试："><a href="#白盒测试：" class="headerlink" title="白盒测试："></a><strong>白盒测试：</strong></h3><p>白盒测试有时也称为玻璃盒测试，是一种测试用例设计方法，它利用作为构件层设计的一部分描述的控制结构来生成测试用例。</p>
+<p>白盒测试是在了解模块内部结构的情况下进行的测试。</p>
+<p>利用白盒测试方法导出的测试用例可以：</p>
+<p>（1）保证一个模块中的所有独立路径至少被执行一次。</p>
+<p>（2）对所有的逻辑判定均需要测试取真和取假两个方面。</p>
+<p>（3）在上下边界及可操作的范围内执行所有的循环。</p>
+<p>（4）检验内部数据结构以确保其有效性。</p>
+<h4 id="基本路径测试（Basic-path-testing）"><a href="#基本路径测试（Basic-path-testing）" class="headerlink" title="基本路径测试（Basic path testing）"></a><strong>基本路径测试（Basic path testing）</strong></h4><p>基本路径测试时由 TOM 首先提出的一种白盒测试技术。</p>
+<p>流图（程序图）是一种简单的控制流表示方法。流程图用于描述程序的控制结构，流程图映射为相应的流图。</p>
+<ul>
+<li><p><strong>圆称为流图结点（flow graph node）</strong>，表示一个或多个过程语句。</p>
+</li>
+<li><p>处理框序列和一个菱形判定框可以映射为单个节点。</p>
+</li>
+<li><p>流图中的箭头称为边或者连接，标识控制刘，类似于流程图中的箭头。</p>
+</li>
+<li><p>由边和结点限定的区域称为域。当计算域时，将图的外部作为一个域。</p>
+</li>
+<li><p>包含条件的结点称为判定结点，其特征是由它发射出两条或多条边。</p>
+</li>
+</ul>
+<p><img src="image-20221214160934681.png" alt="image-20221214160934681"></p>
+<p><img src="image-20221214160939104.png" alt="image-20221214160939104"></p>
+<p><strong>独立路径：</strong>是指任何贯穿程序的、至少引入一组新语句或一个新条件的路径。</p>
+<p>如果设计测试用例强迫执行这些路径（基本集合），就可以保证程序中的每条语句至少执行一次，同时，每个条件判断的真和假都被执行。</p>
+<p><img src="image-20221214161006496.png" alt="image-20221214161006496"></p>
+<p><strong>环复杂度（Cyclomatic Complexity ）</strong>计算方法：</p>
+<p><img src="image-20221214161011172.png" alt="image-20221214161011172"></p>
+<p>V（G）的值提供了组成基本集合的独立路径的上街，并由此得出覆盖所有程序语句所需设计和运行的测试数量的上界。</p>
+<h3 id="黑盒测试"><a href="#黑盒测试" class="headerlink" title="黑盒测试"></a><strong>黑盒测试</strong></h3><p>黑盒测试也称为行为测试，侧重软件的功能需求。</p>
+<p>黑盒测试使软件工程师能设计出将测试程序所有功能需求的输入条件集。</p>
+<p>黑盒测试不是白盒测试的替代品，而是作为发现其他类型错误的辅助方法。</p>
+<p>黑盒测试试图发现以下类型的错误：</p>
+<p>（1）不正确或遗漏的功能</p>
+<p>（2）接口错误</p>
+<p>（3）数据用在测试的后期阶段</p>
+<p>（4）行为或性能错误</p>
+<p>（5）初始化和终止错误</p>
+<p>黑盒测试的方法：</p>
+<p>Graph-based testing methods 基于图的测试方法</p>
+<p>Equivalence partitioning 等价类划分</p>
+<p>Boundary value analysis 边界值分析</p>
+<p>Orthogonal array testing 正交数组测试</p>
+<p>黑盒测试的例子：</p>
+<p><img src="image-20221214161151723.png" alt="image-20221214161151723"></p>
+<p><img src="image-20221214161155755.png" alt="image-20221214161155755"></p>
+<p><img src="image-20221214161201230.png" alt="image-20221214161201230"></p>
+<h1 id="期末"><a href="#期末" class="headerlink" title="期末"></a>期末</h1><ul>
+<li><p>闭卷英文，有部分注解（熟悉状态图、体系结构、部署图、时序图等名称）</p>
+</li>
+<li><p>题型：开放，灵活，无名词解释</p>
+<ul>
+<li><p>单选20 * 1</p>
+</li>
+<li><p>判断分析 2 * 5</p>
+</li>
+<li><p>看图分析L:irerative, scrum, XP, stgly等。解释图中原因</p>
+</li>
+<li><p>问答 5 * 6：题型丰富，灵活应用。</p>
+<ul>
+<li>例如:public string, 违反封装（信息隐藏）概念</li>
+</ul>
+</li>
+<li><p>30分：2 * 10 ， 2 * 5，10分开放题，20分画图+答题（活动图、程序流程、类图，UI界面（黄金原则），计算独立路径等）</p>
+<ul>
+<li><p>等价划分</p>
+<p>  <img src="image-20221228152205055.png" alt="image-20221228152205055"></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="重点"><a href="#重点" class="headerlink" title="重点"></a>重点</h2><p><img src="image-20221228152746207.png" alt="image-20221228152746207"></p>
+<p><img src="image-20221228153224604.png" alt="image-20221228153224604"></p>
+<p><img src="image-20221228153416006.png" alt="image-20221228153416006"></p>
+<p><img src="image-20221228153458124.png" alt="image-20221228153458124"></p>
+<p><img src="image-20221228153727751.png" alt="image-20221228153727751"></p>
+<p><img src="image-20221228153813086.png" alt="image-20221228153813086"></p>
+<p><img src="image-20221214162408194.png" alt="image-20221214162408194"></p>
+<p><img src="image-20221214162414853.png" alt="image-20221214162414853"></p>
+<p><img src="image-20221214162419950.png" alt="image-20221214162419950"></p>
+<p><img src="image-20221214162433369.png" alt="image-20221214162433369"></p>
+<p><img src="image-20221214162439934.png" alt="image-20221214162439934"></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://guoxi-zhang.github.io">Guoxi Zhang</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://guoxi-zhang.github.io/2023/01/15/SEReview/">https://guoxi-zhang.github.io/2023/01/15/SEReview/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://guoxi-zhang.github.io" target="_blank">Guoxi's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://raw.githubusercontent.com/Guoxi-Zhang/guoxi-zhang.github.io/hexo/public/img/avatar.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/01/15/test/" title="test"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">test</div></div></a></div><div class="next-post pull-right"><a href="/2023/01/15/hello-hexo/" title="hello hexo"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">hello hexo</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://raw.githubusercontent.com/Guoxi-Zhang/guoxi-zhang.github.io/hexo/public/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Guoxi Zhang</div><div class="author-info__description">Present is a present.</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Guoxi-Zhang"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Software-Engineering%EF%BC%9A"><span class="toc-number">1.</span> <span class="toc-text">Software Engineering：</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#What-the-difference-between-software-and-hardware"><span class="toc-number">1.1.</span> <span class="toc-text">What the difference between software and hardware?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Why-does-software-need-Change-or-Evolved"><span class="toc-number">1.2.</span> <span class="toc-text">Why does software need Change or Evolved?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B1%82%E6%AC%A1%E5%8C%96%E6%8A%80%E6%9C%AF"><span class="toc-number">1.3.</span> <span class="toc-text">层次化技术</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Software-Process-%EF%BC%9A"><span class="toc-number">2.</span> <span class="toc-text">Software Process ：</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Generic-Framework-Activity-%E9%80%9A%E7%94%A8%E6%A1%86%E6%9E%B6%E6%B4%BB%E5%8A%A8"><span class="toc-number">2.1.</span> <span class="toc-text">Generic Framework Activity(通用框架活动)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Umbrella-Activities%EF%BC%88%E6%99%AE%E9%80%82%E6%80%A7%E6%B4%BB%E5%8A%A8%EF%BC%89%EF%BC%9A"><span class="toc-number">2.2.</span> <span class="toc-text">Umbrella Activities（普适性活动）：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Process-Flow"><span class="toc-number">2.3.</span> <span class="toc-text">Process Flow</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%87%E7%A8%8B%E6%A8%A1%E5%BC%8F%EF%BC%88process-pattern%EF%BC%89"><span class="toc-number">2.4.</span> <span class="toc-text">过程模式（process pattern）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Process-Model"><span class="toc-number">2.5.</span> <span class="toc-text">Process Model</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%80%91%E5%B8%83%E6%A8%A1%E5%9E%8B%EF%BC%88waterfall-model%EF%BC%89"><span class="toc-number">2.5.1.</span> <span class="toc-text">瀑布模型（waterfall model）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#V-%E6%A8%A1%E5%9E%8B%EF%BC%88V-model%EF%BC%89%EF%BC%9A"><span class="toc-number">2.5.2.</span> <span class="toc-text">V 模型（V-model）：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A2%9E%E9%87%8F%E8%BF%87%E7%A8%8B%E6%A8%A1%E5%9E%8B%EF%BC%88Incremental-Model%EF%BC%89"><span class="toc-number">2.5.3.</span> <span class="toc-text">增量过程模型（Incremental Model）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%BC%94%E5%8C%96%E8%BF%87%E7%A8%8B%E6%A8%A1%E5%9E%8B%EF%BC%88Evolutionary-Model%EF%BC%89"><span class="toc-number">2.5.4.</span> <span class="toc-text">演化过程模型（Evolutionary Model）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%9E%BA%E6%97%8B%E6%A8%A1%E5%9E%8B%EF%BC%88Spiral-Model%EF%BC%89"><span class="toc-number">2.5.5.</span> <span class="toc-text">螺旋模型（Spiral Model）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%8F%E5%90%8C%E6%A8%A1%E5%9E%8B%EF%BC%88concurrent-development-model%EF%BC%89"><span class="toc-number">2.5.6.</span> <span class="toc-text">协同模型（concurrent development model）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%9F%E4%B8%80%E8%BF%87%E7%A8%8B%E6%A8%A1%E5%9E%8B%EF%BC%88Unified-Process%EF%BC%89"><span class="toc-number">2.5.7.</span> <span class="toc-text">统一过程模型（Unified Process）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Agile-Development"><span class="toc-number">3.</span> <span class="toc-text">Agile Development</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%8F%E6%8D%B7%E4%B8%8E%E6%95%8F%E6%8D%B7%E8%BF%87%E7%A8%8B"><span class="toc-number">3.1.</span> <span class="toc-text">敏捷与敏捷过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9E%81%E9%99%90%E7%BC%96%E7%A8%8B%EF%BC%88Extreme-Programming-XP-%EF%BC%89"><span class="toc-number">3.2.</span> <span class="toc-text">极限编程（Extreme Programming (XP)）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B7%A5%E4%B8%9A%E6%9E%81%E9%99%90%E7%BC%96%E7%A8%8B%EF%BC%88Industrial-XP-%EF%BC%88IPX%EF%BC%89%EF%BC%89"><span class="toc-number">3.3.</span> <span class="toc-text">工业极限编程（Industrial XP （IPX））</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Scrum"><span class="toc-number">3.4.</span> <span class="toc-text">Scrum</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Kanban"><span class="toc-number">3.5.</span> <span class="toc-text">Kanban</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DevOps"><span class="toc-number">3.6.</span> <span class="toc-text">DevOps</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Recommended-Process-Model"><span class="toc-number">4.</span> <span class="toc-text">Recommended Process Model</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Human-Aspects-of-Software-Engineering"><span class="toc-number">5.</span> <span class="toc-text">Human Aspects of Software Engineering</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8C%87%E5%AF%BC%E5%AE%9E%E8%B7%B5%E7%9A%84%E5%8E%9F%E5%88%99"><span class="toc-number">6.</span> <span class="toc-text">指导实践的原则</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Understanding-Requirements"><span class="toc-number">7.</span> <span class="toc-text">Understanding Requirements</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9C%80%E6%B1%82%E5%B7%A5%E7%A8%8B%EF%BC%88Requirement-engineering%EF%BC%89"><span class="toc-number">7.1.</span> <span class="toc-text">需求工程（Requirement engineering）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9C%80%E6%B1%82%E5%BB%BA%E6%A8%A1%E7%9A%84%E5%85%83%E7%B4%A0"><span class="toc-number">7.2.</span> <span class="toc-text">需求建模的元素</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%9C%80%E6%B1%82%E5%BB%BA%E6%A8%A1%E2%80%94%E6%8E%A8%E8%8D%90%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">8.</span> <span class="toc-text">需求建模—推荐的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E5%9C%BA%E6%99%AF-Scenario-Based-%E5%BB%BA%E6%A8%A1%EF%BC%88%E5%8A%9F%E8%83%BD%EF%BC%89"><span class="toc-number">8.1.</span> <span class="toc-text">基于场景(Scenario-Based)建模（功能）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E4%BE%8B%E6%A8%A1%E6%9D%BF%EF%BC%9A"><span class="toc-number">8.1.1.</span> <span class="toc-text">用例模板：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E7%B1%BB%E7%9A%84%E5%BB%BA%E6%A8%A1"><span class="toc-number">8.2.</span> <span class="toc-text">基于类的建模</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%86%E5%88%AB%E5%88%86%E6%9E%90%E7%B1%BB"><span class="toc-number">8.2.1.</span> <span class="toc-text">识别分析类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB-%E8%81%8C%E8%B4%A3-%E5%8D%8F%E4%BD%9C%E8%80%85%E5%BB%BA%E6%A8%A1%EF%BC%88Class-responsibility-collaborator-CRC%EF%BC%89"><span class="toc-number">8.2.2.</span> <span class="toc-text">类-职责-协作者建模（Class-responsibility-collaborator CRC）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#UML-%E5%9B%BE%E7%A4%BA%E4%BE%8B"><span class="toc-number">8.2.3.</span> <span class="toc-text">UML 图示例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E8%A1%8C%E4%B8%BA%E6%A8%A1%E5%9E%8B"><span class="toc-number">8.3.</span> <span class="toc-text">基于行为模型</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AE%BE%E8%AE%A1%E6%A6%82%E5%BF%B5-Design-Concepts"><span class="toc-number">9.</span> <span class="toc-text">设计概念(Design Concepts)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BD%AF%E5%B7%A5%E8%AF%AD%E5%A2%83%E4%B8%8B%E7%9A%84%E8%AE%BE%E8%AE%A1"><span class="toc-number">9.1.</span> <span class="toc-text">软工语境下的设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E8%AE%A1%E8%BF%87%E7%A8%8B"><span class="toc-number">9.2.</span> <span class="toc-text">设计过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99"><span class="toc-number">9.3.</span> <span class="toc-text">设计原则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%9E%8B"><span class="toc-number">9.4.</span> <span class="toc-text">设计模型</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1Architectural-Design-%E2%80%93-A-Recommended-Approach"><span class="toc-number">10.</span> <span class="toc-text">体系结构设计Architectural Design – A Recommended Approach</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="toc-number">10.1.</span> <span class="toc-text">软件体系结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89"><span class="toc-number">10.1.1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E9%87%8D%E8%A6%81%E7%9A%84-3-%E4%B8%AA%E5%85%B3%E9%94%AE%E5%8E%9F%E5%9B%A0"><span class="toc-number">10.1.2.</span> <span class="toc-text">体系结构重要的 3 个关键原因</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E9%A3%8E%E6%A0%BC"><span class="toc-number">10.1.3.</span> <span class="toc-text">体系结构风格</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E7%8E%AF%E5%A2%83%E5%9B%BE%EF%BC%88ACD%EF%BC%89"><span class="toc-number">10.1.4.</span> <span class="toc-text">体系结构环境图（ACD）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Component-Level-Design"><span class="toc-number">11.</span> <span class="toc-text">Component-Level Design</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5"><span class="toc-number">11.1.</span> <span class="toc-text">概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E8%AE%A1%E5%9F%BA%E4%BA%8E%E7%B1%BB%E7%9A%84%E6%9E%84%E5%BB%BA"><span class="toc-number">11.2.</span> <span class="toc-text">设计基于类的构建</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99"><span class="toc-number">11.2.1.</span> <span class="toc-text">基本设计原则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E8%AE%A1%E5%87%86%E5%88%99"><span class="toc-number">11.2.2.</span> <span class="toc-text">设计准则</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8EO-O%E7%9A%84%E7%BB%84%E4%BB%B6%E8%AE%BE%E8%AE%A1"><span class="toc-number">11.3.</span> <span class="toc-text">基于O-O的组件设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%A0%E7%BB%9F%E7%BB%84%E4%BB%B6%E7%BA%A7%E8%AE%BE%E8%AE%A1"><span class="toc-number">11.4.</span> <span class="toc-text">传统组件级设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%A7%E8%A1%8C%E7%BB%84%E4%BB%B6%E7%BA%A7%E8%AE%BE%E8%AE%A1"><span class="toc-number">11.5.</span> <span class="toc-text">执行组件级设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%84%E4%BB%B6%E7%BA%A7%E8%AE%BE%E8%AE%A1"><span class="toc-number">11.5.1.</span> <span class="toc-text">组件级设计</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%93%E9%97%A8%E7%9A%84%E7%BB%84%E4%BB%B6%E7%BA%A7%E8%AE%BE%E8%AE%A1"><span class="toc-number">11.6.</span> <span class="toc-text">专门的组件级设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#WebApps%E7%9A%84%E7%BB%84%E4%BB%B6%E7%BA%A7%E8%AE%BE%E8%AE%A1"><span class="toc-number">11.6.1.</span> <span class="toc-text">WebApps的组件级设计</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%84%E4%BB%B6%E9%87%8D%E6%9E%84%EF%BC%88Component-refactoring%EF%BC%89"><span class="toc-number">11.7.</span> <span class="toc-text">组件重构（Component refactoring）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#User-Experience-Design"><span class="toc-number">12.</span> <span class="toc-text">User Experience Design.</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E4%BD%93%E9%AA%8C%E5%85%83%E7%B4%A0"><span class="toc-number">12.1.</span> <span class="toc-text">用户体验元素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%BB%84%E9%87%91%E5%8E%9F%E5%88%99"><span class="toc-number">12.2.</span> <span class="toc-text">黄金原则</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E6%93%8D%E7%BA%B5%E6%8E%A7%E5%88%B6"><span class="toc-number">12.2.1.</span> <span class="toc-text">用户操纵控制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%8F%E5%B0%91%E7%94%A8%E6%88%B7%E7%9A%84%E8%AE%B0%E5%BF%86%E8%B4%9F%E6%8B%85"><span class="toc-number">12.2.2.</span> <span class="toc-text">减少用户的记忆负担</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%9D%E6%8C%81%E7%95%8C%E9%9D%A2%E4%B8%80%E8%87%B4"><span class="toc-number">12.2.3.</span> <span class="toc-text">保持界面一致</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#UI%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1"><span class="toc-number">12.3.</span> <span class="toc-text">UI分析与设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#UI%E5%88%86%E6%9E%90%E4%BB%BB%E5%8A%A1"><span class="toc-number">12.3.1.</span> <span class="toc-text">UI分析任务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#UI%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%9E%8B"><span class="toc-number">12.3.2.</span> <span class="toc-text">UI设计模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%81%E7%A8%8B"><span class="toc-number">12.3.3.</span> <span class="toc-text">流程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#UX%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1"><span class="toc-number">12.4.</span> <span class="toc-text">UX分析与设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#UI%E8%AE%BE%E8%AE%A1"><span class="toc-number">12.5.</span> <span class="toc-text">UI设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A5%E5%8F%A3%E8%AE%BE%E8%AE%A1%E6%AD%A5%E9%AA%A4"><span class="toc-number">12.5.1.</span> <span class="toc-text">接口设计步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%8B%E5%AD%90SafeHome"><span class="toc-number">12.5.2.</span> <span class="toc-text">例子SafeHome</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#UI%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F"><span class="toc-number">12.5.3.</span> <span class="toc-text">UI设计模式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E8%AE%A1%E8%AF%84%E4%BB%B7"><span class="toc-number">12.6.</span> <span class="toc-text">设计评价</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%AF%E7%94%A8%E6%80%A7%E5%92%8C%E5%8F%AF%E8%AE%BF%E9%97%AE%E6%80%A7"><span class="toc-number">12.7.</span> <span class="toc-text">可用性和可访问性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%A0%E7%BB%9F%E8%BD%AF%E4%BB%B6%E7%9A%84%E7%94%A8%E6%88%B7%E4%BD%93%E9%AA%8C%E5%92%8C%E7%A7%BB%E5%8A%A8%E6%80%A7"><span class="toc-number">12.8.</span> <span class="toc-text">传统软件的用户体验和移动性</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Design-for-Mobility"><span class="toc-number">13.</span> <span class="toc-text">Design for Mobility.</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8C%91%E6%88%98"><span class="toc-number">13.1.</span> <span class="toc-text">挑战</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-number">13.2.</span> <span class="toc-text">移动开发生命周期</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A7%BB%E5%8A%A8%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1"><span class="toc-number">13.3.</span> <span class="toc-text">移动架构设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8A%E4%B8%8B%E6%96%87%E6%84%9F%E7%9F%A5APP"><span class="toc-number">13.4.</span> <span class="toc-text">上下文感知APP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1%E9%87%91%E5%AD%97%E5%A1%94"><span class="toc-number">13.5.</span> <span class="toc-text">网页设计金字塔</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%84%E4%BB%B6%E7%BA%A7%E5%88%AB%E8%AE%BE%E8%AE%A1"><span class="toc-number">13.6.</span> <span class="toc-text">组件级别设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A7%BB%E5%8A%A8%E8%AE%BE%E8%AE%A1%E8%B4%A8%E9%87%8F"><span class="toc-number">13.7.</span> <span class="toc-text">移动设计质量</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Pattern-Based-Design"><span class="toc-number">14.</span> <span class="toc-text">Pattern-Based Design</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Design-Pattern"><span class="toc-number">14.1.</span> <span class="toc-text">Design Pattern</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E6%A8%A1%E5%BC%8F%E7%9A%84%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1"><span class="toc-number">14.2.</span> <span class="toc-text">基于模式的软件设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1"><span class="toc-number">14.3.</span> <span class="toc-text">体系结构设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%84%E4%BB%B6%E7%BA%A7%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F"><span class="toc-number">14.4.</span> <span class="toc-text">组件级设计模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Anti-patterns"><span class="toc-number">14.5.</span> <span class="toc-text">Anti-patterns</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A7%BB%E5%8A%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F"><span class="toc-number">14.6.</span> <span class="toc-text">移动设计模式</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Software-Testing-Strategies"><span class="toc-number">15.</span> <span class="toc-text">Software Testing Strategies</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-number">15.1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95%E7%AD%96%E7%95%A5%EF%BC%9A%E4%BB%8E%E5%B0%8F%E5%88%B0%E5%A4%A7"><span class="toc-number">15.2.</span> <span class="toc-text">测试策略：从小到大</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Testing-Conventional-Applications"><span class="toc-number">16.</span> <span class="toc-text">Testing Conventional Applications</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95"><span class="toc-number">16.1.</span> <span class="toc-text">单元测试</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5-1"><span class="toc-number">16.1.1.</span> <span class="toc-text">概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E8%BF%87%E7%A8%8B"><span class="toc-number">16.1.2.</span> <span class="toc-text">单元测试过程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9B%86%E6%88%90%E6%B5%8B%E8%AF%95"><span class="toc-number">16.2.</span> <span class="toc-text">集成测试</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5-2"><span class="toc-number">16.2.1.</span> <span class="toc-text">概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E9%9B%86%E6%88%90%E8%BF%87%E7%A8%8B%EF%BC%9A"><span class="toc-number">16.2.2.</span> <span class="toc-text">自顶向下集成过程：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E5%BA%95%E5%90%91%E4%B8%8A%E9%9B%86%E6%88%90%E6%B5%8B%E8%AF%95%EF%BC%9A"><span class="toc-number">16.2.3.</span> <span class="toc-text">自底向上集成测试：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9E%E5%BD%92%E6%B5%8B%E8%AF%95"><span class="toc-number">16.3.</span> <span class="toc-text">回归测试</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Testing-Object-Oriented-Applications"><span class="toc-number">17.</span> <span class="toc-text">Testing Object-Oriented Applications</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%BD%AF%E4%BB%B6%E7%9A%84%E6%B5%8B%E8%AF%95%E7%AD%96%E7%95%A5"><span class="toc-number">17.1.</span> <span class="toc-text">面向对象软件的测试策略</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A1%AE%E8%AE%A4%E6%B5%8B%E8%AF%95%EF%BC%88Validation-Testing%EF%BC%89"><span class="toc-number">17.2.</span> <span class="toc-text">确认测试（Validation Testing）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%CE%B1%E6%B5%8B%E8%AF%95%EF%BC%88Alpha-testing%EF%BC%89%E5%86%85%E9%83%A8%E6%B5%8B%E8%AF%95%EF%BC%9A"><span class="toc-number">17.2.1.</span> <span class="toc-text">α测试（Alpha testing）内部测试：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%CE%B2%E6%B5%8B%E8%AF%95%EF%BC%88Beta-testing%EF%BC%89%E5%A4%96%E9%83%A8%E6%B5%8B%E8%AF%95%EF%BC%9A"><span class="toc-number">17.2.2.</span> <span class="toc-text">β测试（Beta testing）外部测试：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E6%B5%8B%E8%AF%95"><span class="toc-number">17.3.</span> <span class="toc-text">系统测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95%E6%8A%80%E6%9C%AF"><span class="toc-number">17.4.</span> <span class="toc-text">测试技术</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%99%BD%E7%9B%92%E6%B5%8B%E8%AF%95%EF%BC%9A"><span class="toc-number">17.4.1.</span> <span class="toc-text">白盒测试：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E8%B7%AF%E5%BE%84%E6%B5%8B%E8%AF%95%EF%BC%88Basic-path-testing%EF%BC%89"><span class="toc-number">17.4.1.1.</span> <span class="toc-text">基本路径测试（Basic path testing）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%BB%91%E7%9B%92%E6%B5%8B%E8%AF%95"><span class="toc-number">17.4.2.</span> <span class="toc-text">黑盒测试</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9C%9F%E6%9C%AB"><span class="toc-number">18.</span> <span class="toc-text">期末</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8D%E7%82%B9"><span class="toc-number">18.1.</span> <span class="toc-text">重点</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/01/15/test/" title="test">test</a><time datetime="2023-01-15T13:19:20.000Z" title="发表于 2023-01-15 21:19:20">2023-01-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/01/15/SEReview/" title="软件工程知识点复习总结">软件工程知识点复习总结</a><time datetime="2023-01-15T09:25:53.413Z" title="发表于 2023-01-15 17:25:53">2023-01-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/01/15/hello-hexo/" title="hello hexo">hello hexo</a><time datetime="2023-01-15T06:40:08.000Z" title="发表于 2023-01-15 14:40:08">2023-01-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/01/15/hello-world/" title="Hello World">Hello World</a><time datetime="2023-01-15T06:27:41.200Z" title="发表于 2023-01-15 14:27:41">2023-01-15</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Guoxi Zhang</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
